@@ -12,7 +12,7 @@
 
 
 # About me
-* Email:[lyyx@outlook.com]（lyyx@outlook.com）
+* Email: [lyyx@outlook.com]
 
 ###引入的第三方库
 ```
