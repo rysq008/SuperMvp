@@ -10,8 +10,10 @@
 - Glide加载缓存图片
 - 使用RecycleView展示新闻列表
 
+###截图
+![](http://7xrdzx.com1.z0.glb.clouddn.com/image1.jpg)
 
-# About me
+### About me
 * Email: [lyyx@outlook.com]
 
 ###引入的第三方库
