@@ -26,7 +26,6 @@ import com.ly.supermvp.mvp_frame.view.IDelegate;
  * 集成数据-视图绑定的Activity基类(Presenter层)
  *
  * @param <T> View层代理类
- * @author kymjs (http://www.kymjs.com/) on 10/23/15.
  */
 public abstract class DataBindActivity<T extends IDelegate> extends
         ActivityPresenter<T> {

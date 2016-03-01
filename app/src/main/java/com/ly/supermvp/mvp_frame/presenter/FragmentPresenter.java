@@ -34,7 +34,6 @@ import butterknife.ButterKnife;
  * Presenter层的实现基类
  *
  * @param <T> View delegate class type
- * @author kymjs (http://www.kymjs.com/) on 10/23/15.
  */
 public abstract class FragmentPresenter<T extends IDelegate> extends Fragment {
     public T viewDelegate;

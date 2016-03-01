@@ -27,7 +27,6 @@ import com.ly.supermvp.mvp_frame.view.IDelegate;
  * 集成数据-视图绑定的Fragment基类(Presenter层)
  *
  * @param <T> View层代理类
- * @author kymjs (http://www.kymjs.com/) on 10/26/15.
  */
 public abstract class DataBindFragment<T extends IDelegate> extends
         FragmentPresenter<T> {
