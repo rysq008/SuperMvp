@@ -1,12 +1,12 @@
 package com.ly.supermvp.delegate;
 
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.ly.supermvp.R;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
+import com.rey.material.widget.FloatingActionButton;
 
 import butterknife.Bind;
 
