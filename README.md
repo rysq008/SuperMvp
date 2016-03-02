@@ -3,6 +3,7 @@
 
 ###简介
 一款遵循**Material Design**风格的新闻，天气，手机号码归属地查询应用
+- 或许这就是你一直想找的Android一些新的技术的一个合集示例，我也是正在摸索，大家一起学习进步
 - API来自网络免费API
 - MVP模式（使用ViewDelegate解耦）
 - leakcanary引入
