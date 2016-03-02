@@ -10,11 +10,17 @@
 - Glide加载缓存图片
 - 使用RecycleView展示新闻列表
 
+###版本
+####V0.2
+- 整体框架搭建完毕，新闻列表功能已经实现，各功能正常
+- 下拉刷新与加载更多的解耦
+
 ###截图
 ![](http://7xrdzx.com1.z0.glb.clouddn.com/image1.jpg)
 
 ### About me
-* Email: [lyyx@outlook.com]
+* 如果不能运行或者有问题请Email: [lyyx@outlook.com]
+* WeiBo:[http://weibo.com/liuyang6]
 
 ###引入的第三方库
 ```
