@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/material_16dp"
-        android:hint="请输入城市名"
+        android:hint="请输入城市名(如：北京或者beijing)"
         android:textSize="@dimen/material_20sp"
         app:et_labelEllipsize="marquee"
         app:et_labelEnable="true"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/material_16dp"
         android:paddingRight="@dimen/material_16dp"
-        android:text="查询"
+        android:text="查询当前天气"
         app:rd_backgroundColor="@color/colorAccent"
         app:rd_enable="true" />
 

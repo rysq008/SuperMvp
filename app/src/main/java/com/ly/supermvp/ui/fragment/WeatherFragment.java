@@ -1,10 +1,13 @@
 package com.ly.supermvp.ui.fragment;
 
+import android.view.View;
+
+import com.ly.supermvp.R;
+import com.ly.supermvp.delegate.WeatherFragmentDelegate;
 import com.ly.supermvp.model.WeatherModel;
 import com.ly.supermvp.model.WeatherModelImpl;
 import com.ly.supermvp.model.entity.ShowApiWeather;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
-import com.ly.supermvp.delegate.WeatherFragmentDelegate;
 import com.orhanobut.logger.Logger;
 
 /**
@@ -17,7 +20,7 @@ import com.orhanobut.logger.Logger;
  *          <p/>
  *          Create by 2016/2/29 17:43
  */
-public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> {
+public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> implements View.OnClickListener {
 
     private WeatherModel mWeatherModel;
 
@@ -35,7 +38,12 @@ public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> 
     protected void initData() {
         super.initData();
         mWeatherModel = new WeatherModelImpl();
-        netWeather();
+    }
+
+    @Override
+    protected void bindEvenListener() {
+        super.bindEvenListener();
+        viewDelegate.setOnClickListener(this, R.id.bt_weather);
     }
 
     /**
@@ -45,13 +53,23 @@ public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> 
         mWeatherModel.netLoadWeatherWithLocation("北京", "1", "1", "1", "1", new WeatherModel.OnLoadWeatherListener() {
             @Override
             public void onSuccess(ShowApiWeather weather) {
-                Logger.d(weather.f1.toString());
+                Logger.d("onSuccess");
+                viewDelegate.showNowWeatherDialog(weather);
             }
 
             @Override
             public void onFailure(Throwable t) {
-
+                Logger.d("onFailure");
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.bt_weather:
+                netWeather();
+                break;
+        }
     }
 }

@@ -11,10 +11,10 @@ package com.ly.supermvp.model.entity;
  *          Create by 2016/3/1 14:24
  */
 public class ShowApiWeather {
-    public ShowApiWeatherInner f1;//后一天的天气预报
-    public ShowApiWeatherInner now;//现在的天气预报
+    public ShowApiWeatherNormalInner f1;//后一天的天气预报
+    public ShowApiWeatherNowInner now;//现在的天气预报
 
-    public class ShowApiWeatherInner {
+    public class ShowApiWeatherNormalInner {
         public String day;//日期
         public String air_press;//气压
         public String sun_begin_end;//白天持续时间
@@ -34,5 +34,17 @@ public class ShowApiWeather {
         public String night_weather_pic;
         public String night_wind_direction;
         public String night_wind_power;
+    }
+
+    public class ShowApiWeatherNowInner {
+        public String aqi;//污染指数
+        public String sd;//湿度
+        public String temperature;//气温
+        public String temperature_time;//气温时间
+        public String weather;//天气“晴雨”
+        public String weather_code;//天气代码
+        public String weather_pic;//天气图片
+        public String wind_direction;//风向
+        public String wind_power;//风力
     }
 }
