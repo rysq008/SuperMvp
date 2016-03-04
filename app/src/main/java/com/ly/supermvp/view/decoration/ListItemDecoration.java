@@ -1,4 +1,4 @@
-package com.ly.supermvp.ui.decoration;
+package com.ly.supermvp.view.decoration;
 
 import android.content.Context;
 import android.graphics.Canvas;

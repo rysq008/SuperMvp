@@ -13,8 +13,8 @@ import com.ly.supermvp.adapter.NewsListAdapter;
 import com.ly.supermvp.common.Constance;
 import com.ly.supermvp.model.entity.NewsBody;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
-import com.ly.supermvp.ui.ListView;
-import com.ly.supermvp.ui.decoration.ListItemDecoration;
+import com.ly.supermvp.view.ListView;
+import com.ly.supermvp.view.decoration.ListItemDecoration;
 import com.ly.supermvp.widget.ProgressLayout;
 
 import java.util.List;

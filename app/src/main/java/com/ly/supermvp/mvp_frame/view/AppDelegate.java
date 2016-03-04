@@ -17,6 +17,7 @@ package com.ly.supermvp.mvp_frame.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -90,10 +91,14 @@ public abstract class AppDelegate implements IDelegate {
         }
     }
 
-    public void toast(String msg) {
+    public void showToast(String msg) {
         ToastUtils.register(rootView.getContext());
         ToastUtils.showShort(msg);
 //        Toast.makeText(rootView.getContext(), msg, Toast.LENGTH_SHORT).show();
+    }
+    public void showSnackbar(String msg) {
+        Snackbar.make(rootView, msg, Snackbar.LENGTH_LONG)
+                .show();
     }
 
     public <T extends Activity> T getActivity() {

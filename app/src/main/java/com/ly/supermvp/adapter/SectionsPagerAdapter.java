@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.ly.supermvp.ui.activity.MainActivity;
-import com.ly.supermvp.ui.fragment.NewsFragment;
-import com.ly.supermvp.ui.fragment.WeatherFragment;
+import com.ly.supermvp.view.activity.MainActivity;
+import com.ly.supermvp.view.fragment.NewsFragment;
+import com.ly.supermvp.view.fragment.WeatherFragment;
 
 /**
  * <Pre>

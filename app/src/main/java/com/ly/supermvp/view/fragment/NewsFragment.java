@@ -1,4 +1,4 @@
-package com.ly.supermvp.ui.fragment;
+package com.ly.supermvp.view.fragment;
 
 import android.view.View;
 
@@ -7,6 +7,7 @@ import com.ly.supermvp.adapter.NewsListAdapter;
 import com.ly.supermvp.delegate.NewsFragmentDelegate;
 import com.ly.supermvp.model.NewsModel;
 import com.ly.supermvp.model.NewsModelImpl;
+import com.ly.supermvp.model.OnNetListener;
 import com.ly.supermvp.model.entity.NewsBody;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 import com.ly.supermvp.utils.ToastUtils;
@@ -79,7 +80,17 @@ public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implem
         }else {
             mPageNum++;
         }
-        mNewsModel.netLoadNewsList(mPageNum, NewsModelImpl.CHANNEL_ID, NewsModelImpl.CHANNEL_NAME, new NewsModel.OnLoadNewsListListener() {
+        mNewsModel.netLoadNewsList(mPageNum, NewsModelImpl.CHANNEL_ID, NewsModelImpl.CHANNEL_NAME, new OnNetListener<List<NewsBody>>() {
+            @Override
+            public void start() {
+
+            }
+
+            @Override
+            public void finish() {
+
+            }
+
             @Override
             public void onSuccess(List<NewsBody> list) {
                 viewDelegate.showContent();

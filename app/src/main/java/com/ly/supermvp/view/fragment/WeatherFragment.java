@@ -1,9 +1,10 @@
-package com.ly.supermvp.ui.fragment;
+package com.ly.supermvp.view.fragment;
 
 import android.view.View;
 
 import com.ly.supermvp.R;
 import com.ly.supermvp.delegate.WeatherFragmentDelegate;
+import com.ly.supermvp.model.OnNetListener;
 import com.ly.supermvp.model.WeatherModel;
 import com.ly.supermvp.model.WeatherModelImpl;
 import com.ly.supermvp.model.entity.ShowApiWeather;
@@ -12,7 +13,7 @@ import com.orhanobut.logger.Logger;
 
 /**
  * <Pre>
- *     天气预报fragment
+ * 天气预报fragment
  * </Pre>
  *
  * @author 刘阳
@@ -21,6 +22,10 @@ import com.orhanobut.logger.Logger;
  *          Create by 2016/2/29 17:43
  */
 public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> implements View.OnClickListener {
+    public static final String NEED_MORE_DAY = "1";
+    public static final String NEED_INDEX = "1";
+    public static final String NEED_ALARM = "1";
+    public static final String NEED_3_HOUR_FORCAST = "1";
 
     private WeatherModel mWeatherModel;
 
@@ -50,23 +55,35 @@ public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> 
      * 获取天气预报
      */
     private void netWeather() {
-        mWeatherModel.netLoadWeatherWithLocation("北京", "1", "1", "1", "1", new WeatherModel.OnLoadWeatherListener() {
-            @Override
-            public void onSuccess(ShowApiWeather weather) {
-                Logger.d("onSuccess");
-                viewDelegate.showNowWeatherDialog(weather);
-            }
+        mWeatherModel.netLoadWeatherWithLocation(viewDelegate.getInputLocation(), NEED_MORE_DAY,
+                NEED_INDEX, NEED_ALARM, NEED_3_HOUR_FORCAST, new OnNetListener<ShowApiWeather>() {
+                    @Override
+                    public void start() {
 
-            @Override
-            public void onFailure(Throwable t) {
-                Logger.d("onFailure");
-            }
-        });
+                    }
+
+                    @Override
+                    public void finish() {
+
+                    }
+
+                    @Override
+                    public void onSuccess(ShowApiWeather weather) {
+                        Logger.d("onSuccess");
+                        viewDelegate.showNowWeatherDialog(weather);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        viewDelegate.showSnackbar("请求错误");
+                        Logger.d("onFailure");
+                    }
+                });
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bt_weather:
                 netWeather();
                 break;

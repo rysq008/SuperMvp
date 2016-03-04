@@ -1,4 +1,4 @@
-package com.ly.supermvp.ui;
+package com.ly.supermvp.view;
 
 import android.content.Context;
 import android.view.View;

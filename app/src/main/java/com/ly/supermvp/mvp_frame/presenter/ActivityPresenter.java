@@ -16,11 +16,13 @@
 package com.ly.supermvp.mvp_frame.presenter;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.ly.supermvp.mvp_frame.view.IDelegate;
+import com.rey.material.widget.SnackBar;
 
 
 /**
@@ -97,6 +99,10 @@ public abstract class ActivityPresenter<T extends IDelegate> extends AppCompatAc
     protected void onDestroy() {
         super.onDestroy();
         viewDelegate = null;
+    }
+
+    public void showSnackBar(String message){
+        SnackBar.make(this).actionText(message).duration(Snackbar.LENGTH_SHORT).show();
     }
 
     protected abstract Class<T> getDelegateClass();

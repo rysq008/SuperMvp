@@ -1,4 +1,4 @@
-package com.ly.supermvp.ui;
+package com.ly.supermvp.view;
 
 /**
  * <Pre>

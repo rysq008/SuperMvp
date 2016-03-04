@@ -23,7 +23,7 @@ public class WeatherModelImpl implements WeatherModel {
     @Override
     public void netLoadWeatherWithLocation(String area, String needMoreDay, String needIndex,
                                            String needAlarm, String need3HourForcast,
-                                           final OnLoadWeatherListener listener) {
+                                           final OnNetListener listener) {
         //使用RxJava响应Retrofit
         Observable<ShowApiResponse<ShowApiWeather>> observable = RetrofitService.getInstance().
                 createNewsApi().getWeather(area, needMoreDay, needIndex, needAlarm, need3HourForcast);
@@ -43,6 +43,9 @@ public class WeatherModelImpl implements WeatherModel {
 
                     @Override
                     public void onNext(ShowApiResponse<ShowApiWeather> showApiWeatherShowApiResponse) {
+                        if(showApiWeatherShowApiResponse.showapi_res_body.now == null){
+                            listener.onFailure(new Exception(showApiWeatherShowApiResponse.showapi_res_code));
+                        }
                         listener.onSuccess(showApiWeatherShowApiResponse.showapi_res_body);
                     }
                 });

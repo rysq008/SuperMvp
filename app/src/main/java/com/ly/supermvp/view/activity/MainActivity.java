@@ -1,4 +1,4 @@
-package com.ly.supermvp.ui.activity;
+package com.ly.supermvp.view.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;

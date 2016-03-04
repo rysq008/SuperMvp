@@ -7,10 +7,11 @@
     android:orientation="vertical">
 
     <com.rey.material.widget.EditText
+        android:id="@+id/et_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/material_16dp"
-        android:hint="请输入城市名(如：北京或者beijing)"
+        android:hint="请输入城市名(如：北京)"
         android:textSize="@dimen/material_20sp"
         app:et_labelEllipsize="marquee"
         app:et_labelEnable="true"
