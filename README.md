@@ -18,6 +18,8 @@
 
 ####V0.3
 - 天气预报查询，弹窗提醒
+- 修改新闻列表为cardview展示
+- 支持新闻查看详情，CollapsingToolbarLayout +　NestedScrollView
 
 ###截图
 ####新闻
