@@ -15,9 +15,12 @@
 ####V0.2
 - 整体框架搭建完毕，新闻列表功能已经实现，各功能正常
 - 下拉刷新与加载更多的解耦
+####V0.3
+- 天气预报查询，弹窗提醒
 
 ###截图
 ![](http://7xrdzx.com1.z0.glb.clouddn.com/image1.jpg)
+![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
 
 ### About me
 * 如果不能运行或者有问题请Email: [lyyx@outlook.com]
