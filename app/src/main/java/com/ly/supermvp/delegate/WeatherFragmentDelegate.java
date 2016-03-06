@@ -1,6 +1,8 @@
 package com.ly.supermvp.delegate;
 
+import android.content.Context;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -9,6 +11,8 @@ import com.ly.supermvp.R;
 import com.ly.supermvp.model.entity.ShowApiWeather;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
 import com.ly.supermvp.utils.GlideUtil;
+import com.ly.supermvp.view.LoadingView;
+import com.ly.supermvp.widget.ProgressLayout;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.Holder;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -26,13 +30,15 @@ import butterknife.Bind;
  *          <p/>
  *          Create by 2016/2/29 17:44
  */
-public class WeatherFragmentDelegate extends AppDelegate {
+public class WeatherFragmentDelegate extends AppDelegate implements LoadingView{
 
     private ImageView iv_weather;
     private TextView tv_weather, tv_aqi, tv_sd, tv_wind_direction, tv_wind_power, tv_temperature_time,
             tv_temperature;
     private LinearLayout ll_holder;
 
+    @Bind(R.id.progress_layout)
+    ProgressLayout mProgressLayout;
     @Bind(R.id.et_location)
     EditText et_location;
 
@@ -99,5 +105,27 @@ public class WeatherFragmentDelegate extends AppDelegate {
                 .setCancelable(true)
                 .create();
         dialog.show();
+    }
+
+    @Override
+    public void showLoading() {
+        mProgressLayout.showLoading();
+    }
+
+    @Override
+    public void showContent() {
+        if (!mProgressLayout.isContent()) {
+            mProgressLayout.showContent();
+        }
+    }
+
+    @Override
+    public void showError(int messageId, View.OnClickListener listener) {
+
+    }
+
+    @Override
+    public Context getContext() {
+        return null;
     }
 }

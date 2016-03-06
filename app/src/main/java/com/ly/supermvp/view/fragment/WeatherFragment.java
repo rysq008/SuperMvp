@@ -1,5 +1,6 @@
 package com.ly.supermvp.view.fragment;
 
+import android.text.TextUtils;
 import android.view.View;
 
 import com.ly.supermvp.R;
@@ -55,16 +56,20 @@ public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> 
      * 获取天气预报
      */
     private void netWeather() {
+        if(TextUtils.isEmpty(viewDelegate.getInputLocation())){
+            viewDelegate.showSnackbar("输入为空");
+            return;
+        }
         mWeatherModel.netLoadWeatherWithLocation(viewDelegate.getInputLocation(), NEED_MORE_DAY,
                 NEED_INDEX, NEED_ALARM, NEED_3_HOUR_FORCAST, new OnNetListener<ShowApiWeather>() {
                     @Override
                     public void start() {
-
+                        viewDelegate.showLoading();
                     }
 
                     @Override
                     public void finish() {
-
+                        viewDelegate.showContent();
                     }
 
                     @Override

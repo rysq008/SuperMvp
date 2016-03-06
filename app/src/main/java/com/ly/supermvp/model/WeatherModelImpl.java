@@ -28,12 +28,13 @@ public class WeatherModelImpl implements WeatherModel {
         Observable<ShowApiResponse<ShowApiWeather>> observable = RetrofitService.getInstance().
                 createNewsApi().getWeather(area, needMoreDay, needIndex, needAlarm, need3HourForcast);
 
+        listener.start();
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<ShowApiResponse<ShowApiWeather>>() {
                     @Override
                     public void onCompleted() {
-                        //请求完成
+
                     }
 
                     @Override
@@ -43,6 +44,7 @@ public class WeatherModelImpl implements WeatherModel {
 
                     @Override
                     public void onNext(ShowApiResponse<ShowApiWeather> showApiWeatherShowApiResponse) {
+                        listener.finish();
                         if(showApiWeatherShowApiResponse.showapi_res_body.now == null){
                             listener.onFailure(new Exception(showApiWeatherShowApiResponse.showapi_res_code));
                         }
