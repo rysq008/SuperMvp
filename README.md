@@ -20,6 +20,7 @@
 - 天气预报查询，弹窗提醒
 - 修改新闻列表为cardview展示
 - 支持新闻查看详情，CollapsingToolbarLayout +　NestedScrollView
+- 支持右滑返回
 
 ###截图
 ####新闻
@@ -55,4 +56,5 @@
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.github.orhanobut:logger:1.12'
     compile 'com.github.rey5137:material:1.2.2'
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
   ```
