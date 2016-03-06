@@ -20,7 +20,11 @@
 - 天气预报查询，弹窗提醒
 
 ###截图
-![](http://7xrdzx.com1.z0.glb.clouddn.com/image1.jpg)
+####新闻
+
+![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_news.jpg)
+####天气预报
+
 ![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
 
 ### About me
