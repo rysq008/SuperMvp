@@ -73,6 +73,9 @@ public class MainActivity extends ActivityPresenter<MainActivityDelegate> implem
     @Override
     protected void initView() {
         super.initView();
+
+        setSwipeBackEnable(false);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         viewDelegate.setViewPagerAdapter(mSectionsPagerAdapter);

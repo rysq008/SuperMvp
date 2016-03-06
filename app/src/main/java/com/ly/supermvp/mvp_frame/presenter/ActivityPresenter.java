@@ -17,10 +17,10 @@ package com.ly.supermvp.mvp_frame.presenter;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.ly.supermvp.base.MySwipeBackActivity;
 import com.ly.supermvp.mvp_frame.view.IDelegate;
 import com.rey.material.widget.SnackBar;
 
@@ -31,7 +31,7 @@ import com.rey.material.widget.SnackBar;
  *
  * @param <T> View delegate class type
  */
-public abstract class ActivityPresenter<T extends IDelegate> extends AppCompatActivity {
+public abstract class ActivityPresenter<T extends IDelegate> extends MySwipeBackActivity {
     protected T viewDelegate;
 
     public ActivityPresenter() {

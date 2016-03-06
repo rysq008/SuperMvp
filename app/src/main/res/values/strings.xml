@@ -4,4 +4,6 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="load_error">加载出错</string>
+
+    <string name="transition_news_img">transition_news_img</string>
 </resources>

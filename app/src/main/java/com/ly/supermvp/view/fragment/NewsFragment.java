@@ -1,5 +1,6 @@
 package com.ly.supermvp.view.fragment;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.ly.supermvp.R;
@@ -11,6 +12,7 @@ import com.ly.supermvp.model.OnNetListener;
 import com.ly.supermvp.model.entity.NewsBody;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 import com.ly.supermvp.utils.ToastUtils;
+import com.ly.supermvp.view.activity.NewsDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +59,14 @@ public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implem
         mAdapter.setOnItemClickListener(new NewsListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                ToastUtils.showShort("暂时不支持查看详情");
+                NewsBody item = mNews.get(position);
+                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                if((item.imageurls != null && item.imageurls.size() > 0)) {
+                    intent.putExtra(NewsDetailActivity.ARG_NEWS_PIC, item.imageurls.get(0).url);
+                }
+                intent.putExtra(NewsDetailActivity.ARG_NEWS_URL, item.link);
+                intent.putExtra(NewsDetailActivity.ARG_NEWS_TITLE, item.title);
+                startActivity(intent);
             }
         });
 
