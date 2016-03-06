@@ -90,7 +90,8 @@ public class NewsListAdapter extends RecyclerView.Adapter {
             } else {
                 GlideUtil.loadImage(context, "", holder1.imageView);
             }
-            holder1.title.setText(item.desc);
+            holder1.desc.setText(item.desc);
+            holder1.title.setText(item.title);
         }
     }
 
@@ -120,10 +121,12 @@ public class NewsListAdapter extends RecyclerView.Adapter {
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @Bind(R.id.text)
-        TextView title;
-        @Bind(R.id.imageview)
+        @Bind(R.id.tv_desc)
+        TextView desc;
+        @Bind(R.id.iv_desc)
         ImageView imageView;
+        @Bind(R.id.tv_title)
+        TextView title;
 
         public ItemViewHolder(View itemView) {
             super(itemView);

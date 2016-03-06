@@ -14,7 +14,6 @@ import com.ly.supermvp.common.Constance;
 import com.ly.supermvp.model.entity.NewsBody;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
 import com.ly.supermvp.view.ListView;
-import com.ly.supermvp.view.decoration.ListItemDecoration;
 import com.ly.supermvp.widget.ProgressLayout;
 
 import java.util.List;
@@ -112,7 +111,7 @@ public class NewsFragmentDelegate extends AppDelegate implements ListView<List<N
 
     public void initRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.addItemDecoration(new ListItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
+//        mRecyclerView.addItemDecoration(new ListItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setHasFixedSize(true);
     }

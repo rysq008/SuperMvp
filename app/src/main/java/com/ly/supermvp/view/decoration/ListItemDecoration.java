@@ -13,6 +13,7 @@ import com.ly.supermvp.R;
 
 /**
  * <Pre>
+ *     recycleview分割线
  * </Pre>
  *
  * @author 刘阳

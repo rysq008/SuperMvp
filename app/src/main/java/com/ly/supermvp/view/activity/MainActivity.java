@@ -147,7 +147,7 @@ public class MainActivity extends ActivityPresenter<MainActivityDelegate> implem
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            ImageView imagView = (ImageView) rootView.findViewById(R.id.imageview);
+            ImageView imagView = (ImageView) rootView.findViewById(R.id.iv_desc);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
