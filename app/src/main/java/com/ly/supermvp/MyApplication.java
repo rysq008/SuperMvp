@@ -1,6 +1,7 @@
 package com.ly.supermvp;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.StrictMode;
 
 import com.orhanobut.logger.LogLevel;
@@ -43,5 +44,9 @@ public class MyApplication extends Application {
                     .penaltyDeath() //
                     .build());
         }
+    }
+    // 获取ApplicationContext
+    public static Context getContext() {
+        return instance;
     }
 }

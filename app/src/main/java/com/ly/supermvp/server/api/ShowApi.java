@@ -1,12 +1,13 @@
 package com.ly.supermvp.server.api;
 
 import com.ly.supermvp.common.BizInterface;
-import com.ly.supermvp.model.entity.ShowApiWeather;
 import com.ly.supermvp.model.entity.NewsResponse;
 import com.ly.supermvp.model.entity.ShowApiResponse;
+import com.ly.supermvp.model.entity.ShowApiWeather;
 
 import retrofit.Call;
 import retrofit.http.GET;
+import retrofit.http.Header;
 import retrofit.http.Headers;
 import retrofit.http.Query;
 import rx.Observable;
@@ -24,7 +25,8 @@ import rx.Observable;
 public interface ShowApi {
     @GET(BizInterface.NEWS_URL)
     @Headers("apikey: " + BizInterface.API_KEY)
-    Call<NewsResponse> getNewsList(@Query("page") int page,
+    Call<NewsResponse> getNewsList(@Header("Cache-Control") String cacheControl,
+                                   @Query("page") int page,
                                    @Query("channelId") String channelId,//新闻频道id，必须精确匹配
                                    @Query("channelName") String channelName);//新闻频道名称，可模糊匹配
 
@@ -39,7 +41,8 @@ public interface ShowApi {
      */
     @GET(BizInterface.WEATHER_URL)
     @Headers("apikey: " + BizInterface.API_KEY)
-    Observable<ShowApiResponse<ShowApiWeather>> getWeather(@Query("area") String area,
+    Observable<ShowApiResponse<ShowApiWeather>> getWeather(@Header("Cache-Control") String cacheControl,
+                                                           @Query("area") String area,
                                                            @Query("needMoreDay") String needMoreDay,
                                                            @Query("needMoreDay") String needIndex,
                                                            @Query("needMoreDay") String needAlarm,

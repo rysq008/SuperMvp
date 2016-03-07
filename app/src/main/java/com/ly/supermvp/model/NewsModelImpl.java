@@ -27,14 +27,18 @@ public class NewsModelImpl implements NewsModel{
         //此处采用Retrofit的官方响应方式，天气预报采用RxJava
         Call<NewsResponse> call = RetrofitService.getInstance()
                 .createNewsApi()
-                .getNewsList(page, CHANNEL_ID, CHANNEL_NAME);
+                .getNewsList(RetrofitService.getCacheControl(), page, CHANNEL_ID, CHANNEL_NAME);
 
         call.enqueue(new Callback<NewsResponse>() {
             @Override
             public void onResponse(Response<NewsResponse> response, Retrofit retrofit) {
-                Logger.d(response.message() + response.code() + response.body().showapi_res_code
-                        + response.body().showapi_res_error);
-                listListener.onSuccess(response.body().showapi_res_body.pagebean.contentlist);
+                if(response.body() != null) {
+                    Logger.d(response.message() + response.code() + response.body().showapi_res_code
+                            + response.body().showapi_res_error);
+                    listListener.onSuccess(response.body().showapi_res_body.pagebean.contentlist);
+                }else {
+                    listListener.onFailure(new Exception());
+                }
             }
 
             @Override

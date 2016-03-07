@@ -26,7 +26,8 @@ public class WeatherModelImpl implements WeatherModel {
                                            final OnNetListener listener) {
         //使用RxJava响应Retrofit
         Observable<ShowApiResponse<ShowApiWeather>> observable = RetrofitService.getInstance().
-                createNewsApi().getWeather(area, needMoreDay, needIndex, needAlarm, need3HourForcast);
+                createNewsApi().getWeather(RetrofitService.getCacheControl(), area, needMoreDay,
+                needIndex, needAlarm, need3HourForcast);
 
         listener.start();
         observable.subscribeOn(Schedulers.io())
