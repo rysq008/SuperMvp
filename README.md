@@ -1,5 +1,5 @@
 #  SuperMvp
-## 使用RxJava+Retrofit+Glide+Material Design使用改进MVP构建应用
+## 使用MVP + RxJava+Retrofit+Glide+Material Design
 
 ###简介
 一款遵循**Material Design**风格的新闻，天气，手机号码归属地查询应用
@@ -29,6 +29,21 @@
 ####天气预报
 
 ![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
+
+### 深受以下文章影响，感谢大神们的无私讲解
+* [给Android开发者的RxJava详解](http://gank.io/post/560e15be2dca930e00da1083)
+* [深入浅出RxJava](http://blog.csdn.net/lzyzsd/article/details/41833541)
+* [用MVP架构开发Android应用](http://kymjs.com/code/2015/11/09/01)
+* [对MVC、MVP、MVVM的理解](http://blog.csdn.net/napolunyishi/article/details/22722345)
+
+###开源项目
+#####RengwuxianRxjava
+扔物线《给Android开发者的RxJava详解》文章中的例子  
+Github地址：https://github.com/androidmalin/RengwuxianRxjava
+
+#####SimpleNews
+基于Material Design和MVP的新闻客户端    
+Github地址：https://github.com/liuling07/SimpleNews
 
 ### About me
 * 如果不能运行或者有问题请Email: lyyx@outlook.com
