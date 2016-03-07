@@ -21,6 +21,7 @@
 - 修改新闻列表为cardview展示
 - 支持新闻查看详情，CollapsingToolbarLayout +　NestedScrollView
 - 支持右滑返回
+- 增加缓存机制(使用Retrofit和Okhttp实现网络缓存)
 
 ###截图
 ####新闻
