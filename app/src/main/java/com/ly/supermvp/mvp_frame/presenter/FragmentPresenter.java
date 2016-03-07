@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 /**
  * Presenter base class for Fragment
  * Presenter层的实现基类
- *
+ *@author kymjs (http://www.kymjs.com/) on 10/23/15.
  * @param <T> View delegate class type
  */
 public abstract class FragmentPresenter<T extends IDelegate> extends Fragment {

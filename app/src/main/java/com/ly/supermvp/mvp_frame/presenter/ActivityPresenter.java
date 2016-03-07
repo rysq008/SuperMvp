@@ -28,7 +28,7 @@ import com.rey.material.widget.SnackBar;
 /**
  * Presenter base class for Activity
  * Presenter层的实现基类
- *
+ *@author kymjs (http://www.kymjs.com/) on 10/23/15.
  * @param <T> View delegate class type
  */
 public abstract class ActivityPresenter<T extends IDelegate> extends MySwipeBackActivity {

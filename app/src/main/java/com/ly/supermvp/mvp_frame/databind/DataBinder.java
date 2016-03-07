@@ -21,7 +21,7 @@ import com.ly.supermvp.mvp_frame.view.IDelegate;
 
 /**
  * ViewModel实现
- *
+ *@author kymjs (http://www.kymjs.com/) on 10/23/15.
  */
 public interface DataBinder<T extends IDelegate, D extends IModel> {
 

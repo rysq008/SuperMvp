@@ -31,7 +31,7 @@ import butterknife.ButterKnife;
 /**
  * View delegate base class
  * 视图层代理的基类
- *
+ *@author kymjs (http://www.kymjs.com/) on 10/23/15.
  */
 public abstract class AppDelegate implements IDelegate {
     protected final SparseArray<View> mViews = new SparseArray<View>();
