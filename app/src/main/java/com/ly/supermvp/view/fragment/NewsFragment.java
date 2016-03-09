@@ -8,7 +8,7 @@ import com.ly.supermvp.adapter.NewsListAdapter;
 import com.ly.supermvp.delegate.NewsFragmentDelegate;
 import com.ly.supermvp.model.NewsModel;
 import com.ly.supermvp.model.NewsModelImpl;
-import com.ly.supermvp.model.OnNetListener;
+import com.ly.supermvp.model.OnNetRequestListener;
 import com.ly.supermvp.model.entity.NewsBody;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 import com.ly.supermvp.utils.ToastUtils;
@@ -89,7 +89,7 @@ public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implem
         }else {
             mPageNum++;
         }
-        mNewsModel.netLoadNewsList(mPageNum, NewsModelImpl.CHANNEL_ID, NewsModelImpl.CHANNEL_NAME, new OnNetListener<List<NewsBody>>() {
+        mNewsModel.netLoadNewsList(mPageNum, NewsModelImpl.CHANNEL_ID, NewsModelImpl.CHANNEL_NAME, new OnNetRequestListener<List<NewsBody>>() {
             @Override
             public void start() {
 

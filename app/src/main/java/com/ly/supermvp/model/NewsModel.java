@@ -21,5 +21,5 @@ public interface NewsModel {
      * @param channelId 频道id 来自api
      * @param channelName 频道名称
      */
-    void netLoadNewsList(int page, String channelId, String channelName, OnNetListener<List<NewsBody>> listListener);
+    void netLoadNewsList(int page, String channelId, String channelName, OnNetRequestListener<List<NewsBody>> listListener);
 }

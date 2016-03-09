@@ -10,7 +10,7 @@ package com.ly.supermvp.model;
  *          <p/>
  *          Create by 2016/3/4 11:36
  */
-public class SimpleOnNetListener implements OnNetListener{
+public class SimpleOnNetListener implements OnNetRequestListener {
     @Override
     public void start() {
 

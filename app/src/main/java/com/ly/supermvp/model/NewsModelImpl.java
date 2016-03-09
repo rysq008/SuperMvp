@@ -19,11 +19,11 @@ import retrofit.Retrofit;
  *          <p/>
  *          Create by 2016/1/28 14:54
  */
-public class NewsModelImpl implements NewsModel{
+public class NewsModelImpl implements NewsModel {
     public static final String CHANNEL_ID = "5572a109b3cdc86cf39001db";//频道id 来自api指定
     public static final String CHANNEL_NAME = "国内最新";//频道名称 来自api指定
     @Override
-    public void netLoadNewsList(int page, String channelId, String channelName, final OnNetListener listListener) {
+    public void netLoadNewsList(int page, String channelId, String channelName, final OnNetRequestListener listListener) {
         //此处采用Retrofit的官方响应方式，天气预报采用RxJava
         Call<NewsResponse> call = RetrofitService.getInstance()
                 .createNewsApi()

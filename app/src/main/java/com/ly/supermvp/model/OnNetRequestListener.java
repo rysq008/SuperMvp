@@ -10,7 +10,7 @@ package com.ly.supermvp.model;
  *          <p/>
  *          Create by 2016/3/4 11:28
  */
-public interface OnNetListener<T> {
+public interface OnNetRequestListener<T> {
     /**
      * 网络请求开始
      */

@@ -7,6 +7,7 @@ import com.ly.supermvp.model.entity.ShowApiResponse;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
 import rx.schedulers.Schedulers;
 
 /**
@@ -23,33 +24,40 @@ public class WeatherModelImpl implements WeatherModel {
     @Override
     public void netLoadWeatherWithLocation(String area, String needMoreDay, String needIndex,
                                            String needAlarm, String need3HourForcast,
-                                           final OnNetListener listener) {
+                                           final OnNetRequestListener listener) {
         //使用RxJava响应Retrofit
         Observable<ShowApiResponse<ShowApiWeather>> observable = RetrofitService.getInstance().
                 createNewsApi().getWeather(RetrofitService.getCacheControl(), area, needMoreDay,
                 needIndex, needAlarm, need3HourForcast);
 
-        listener.start();
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(new Action0() {
+                    @Override
+                    public void call() {
+                        listener.start();
+                    }
+                })
                 .subscribe(new Subscriber<ShowApiResponse<ShowApiWeather>>() {
                     @Override
                     public void onCompleted() {
-
+                        //仅成功后会回调
+                        listener.finish();
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         listener.onFailure(e);
+                        listener.finish();
                     }
 
                     @Override
                     public void onNext(ShowApiResponse<ShowApiWeather> showApiWeatherShowApiResponse) {
-                        listener.finish();
                         if(showApiWeatherShowApiResponse.showapi_res_body.now == null){
                             listener.onFailure(new Exception(showApiWeatherShowApiResponse.showapi_res_code));
+                        }else {
+                            listener.onSuccess(showApiWeatherShowApiResponse.showapi_res_body);
                         }
-                        listener.onSuccess(showApiWeatherShowApiResponse.showapi_res_body);
                     }
                 });
     }

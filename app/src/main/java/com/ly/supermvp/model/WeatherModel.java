@@ -23,5 +23,5 @@ public interface WeatherModel {
      * @param listener 网络请求成功失败监听
      */
     void netLoadWeatherWithLocation(String area, String needMoreDay, String needIndex, String needAlarm,
-                                    String need3HourForcast, OnNetListener<ShowApiWeather> listener);
+                                    String need3HourForcast, OnNetRequestListener<ShowApiWeather> listener);
 }
