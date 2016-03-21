@@ -9,7 +9,7 @@ import com.ly.supermvp.delegate.NewsFragmentDelegate;
 import com.ly.supermvp.model.NewsModel;
 import com.ly.supermvp.model.NewsModelImpl;
 import com.ly.supermvp.model.OnNetRequestListener;
-import com.ly.supermvp.model.entity.NewsBody;
+import com.ly.supermvp.model.entity.news.NewsBody;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 import com.ly.supermvp.utils.ToastUtils;
 import com.ly.supermvp.view.activity.NewsDetailActivity;

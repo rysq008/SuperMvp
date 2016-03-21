@@ -11,12 +11,9 @@ import com.jakewharton.rxbinding.support.v4.widget.RxSwipeRefreshLayout;
 import com.ly.supermvp.R;
 import com.ly.supermvp.adapter.NewsListAdapter;
 import com.ly.supermvp.common.Constance;
-import com.ly.supermvp.model.entity.NewsBody;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
-import com.ly.supermvp.view.ListView;
+import com.ly.supermvp.view.LoadingView;
 import com.ly.supermvp.widget.ProgressLayout;
-
-import java.util.List;
 
 import butterknife.Bind;
 import rx.functions.Action1;
@@ -31,13 +28,13 @@ import rx.functions.Action1;
  *          <p/>
  *          Create by 2016/1/27 14:34
  */
-public class NewsFragmentDelegate extends AppDelegate implements ListView<List<NewsBody>>,
+public class NewsFragmentDelegate extends AppDelegate implements LoadingView,
         SwipeRefreshLayout.OnRefreshListener {
     @Bind(R.id.list_progress)
     ProgressLayout mProgressLayout;
     @Bind(R.id.list_swipe_refresh)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @Bind(R.id.list_recycler_view)
+    @Bind(R.id.rv_news)
     RecyclerView mRecyclerView;
 
     /**
@@ -118,11 +115,6 @@ public class NewsFragmentDelegate extends AppDelegate implements ListView<List<N
 
     public void setListAdapter(NewsListAdapter adapter) {
         mRecyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public void showList(List<NewsBody> listObservable) {
-
     }
 
 //    @Override

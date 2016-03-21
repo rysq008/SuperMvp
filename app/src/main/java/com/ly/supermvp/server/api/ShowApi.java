@@ -1,9 +1,9 @@
 package com.ly.supermvp.server.api;
 
 import com.ly.supermvp.common.BizInterface;
-import com.ly.supermvp.model.entity.NewsResponse;
+import com.ly.supermvp.model.entity.news.ShowApiNews;
 import com.ly.supermvp.model.entity.ShowApiResponse;
-import com.ly.supermvp.model.entity.ShowApiWeather;
+import com.ly.supermvp.model.entity.weather.ShowApiWeather;
 
 import retrofit.Call;
 import retrofit.http.GET;
@@ -25,10 +25,10 @@ import rx.Observable;
 public interface ShowApi {
     @GET(BizInterface.NEWS_URL)
     @Headers("apikey: " + BizInterface.API_KEY)
-    Call<NewsResponse> getNewsList(@Header("Cache-Control") String cacheControl,
-                                   @Query("page") int page,
-                                   @Query("channelId") String channelId,//新闻频道id，必须精确匹配
-                                   @Query("channelName") String channelName);//新闻频道名称，可模糊匹配
+    Call<ShowApiResponse<ShowApiNews>> getNewsList(@Header("Cache-Control") String cacheControl,
+                                  @Query("page") int page,
+                                  @Query("channelId") String channelId,//新闻频道id，必须精确匹配
+                                  @Query("channelName") String channelName);//新闻频道名称，可模糊匹配
 
     /**
      * 天气预报响应

@@ -1,9 +1,10 @@
-package com.ly.supermvp.model.entity;
+package com.ly.supermvp.model.entity.news;
 
 import java.util.List;
 
 /**
  * <Pre>
+ *     新闻列表实体类
  * </Pre>
  *
  * @author 刘阳
@@ -11,16 +12,10 @@ import java.util.List;
  *          <p/>
  *          Create by 2016/1/27 15:28
  */
-public class NewsResponse {
-    public String showapi_res_code;
-    public String showapi_res_error;
-    public ShowApiResBody showapi_res_body;
-
-    public class ShowApiResBody {
-        public PageBean pagebean;
-        public String ret_code;
-    }
-    public class PageBean{
+public class ShowApiNews {
+    public PageBean pagebean;
+    public String ret_code;
+    public class PageBean {
         public String allNum;
         public String allPages;
         public String currentPage;

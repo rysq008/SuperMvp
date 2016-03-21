@@ -1,6 +1,6 @@
 package com.ly.supermvp.model;
 
-import com.ly.supermvp.model.entity.NewsBody;
+import com.ly.supermvp.model.entity.news.NewsBody;
 
 import java.util.List;
 

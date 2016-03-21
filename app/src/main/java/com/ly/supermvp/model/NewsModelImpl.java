@@ -1,7 +1,8 @@
 package com.ly.supermvp.model;
 
+import com.ly.supermvp.model.entity.news.ShowApiNews;
+import com.ly.supermvp.model.entity.ShowApiResponse;
 import com.ly.supermvp.server.RetrofitService;
-import com.ly.supermvp.model.entity.NewsResponse;
 import com.orhanobut.logger.Logger;
 
 import retrofit.Call;
@@ -24,14 +25,14 @@ public class NewsModelImpl implements NewsModel {
     public static final String CHANNEL_NAME = "国内最新";//频道名称 来自api指定
     @Override
     public void netLoadNewsList(int page, String channelId, String channelName, final OnNetRequestListener listListener) {
-        //此处采用Retrofit的官方响应方式，天气预报采用RxJava
-        Call<NewsResponse> call = RetrofitService.getInstance()
+        //注意，此处采用Retrofit的官方响应方式，天气预报采用RxJava，学习一下两种用法
+        Call<ShowApiResponse<ShowApiNews>> call = RetrofitService.getInstance()
                 .createNewsApi()
                 .getNewsList(RetrofitService.getCacheControl(), page, CHANNEL_ID, CHANNEL_NAME);
 
-        call.enqueue(new Callback<NewsResponse>() {
+        call.enqueue(new Callback<ShowApiResponse<ShowApiNews>>() {
             @Override
-            public void onResponse(Response<NewsResponse> response, Retrofit retrofit) {
+            public void onResponse(Response<ShowApiResponse<ShowApiNews>> response, Retrofit retrofit) {
                 if(response.body() != null) {
                     Logger.d(response.message() + response.code() + response.body().showapi_res_code
                             + response.body().showapi_res_error);

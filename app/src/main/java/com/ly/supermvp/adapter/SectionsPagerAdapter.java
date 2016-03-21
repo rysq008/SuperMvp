@@ -49,7 +49,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return "天气预报";
             case 2:
-                return "号码归属地";
+                return "美图大全";
         }
         return null;
     }
