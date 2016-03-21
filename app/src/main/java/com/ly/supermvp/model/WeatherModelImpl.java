@@ -1,6 +1,6 @@
 package com.ly.supermvp.model;
 
-import com.ly.supermvp.model.entity.ShowApiWeather;
+import com.ly.supermvp.model.entity.weather.ShowApiWeather;
 import com.ly.supermvp.server.RetrofitService;
 import com.ly.supermvp.model.entity.ShowApiResponse;
 

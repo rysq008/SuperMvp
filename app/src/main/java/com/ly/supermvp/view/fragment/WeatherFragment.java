@@ -8,7 +8,7 @@ import com.ly.supermvp.delegate.WeatherFragmentDelegate;
 import com.ly.supermvp.model.OnNetRequestListener;
 import com.ly.supermvp.model.WeatherModel;
 import com.ly.supermvp.model.WeatherModelImpl;
-import com.ly.supermvp.model.entity.ShowApiWeather;
+import com.ly.supermvp.model.entity.weather.ShowApiWeather;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 import com.orhanobut.logger.Logger;
 
