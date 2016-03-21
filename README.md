@@ -70,26 +70,4 @@ Github地址：https://github.com/liuling07/SimpleNews
 * [Material](https://github.com/rey5137/material)(一系列meterial的控件，不过用起来有点差强人意，wiki写得不是很全面)
 * [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout)(从未想过右滑返回可以做得这么简单，非常强大！)
 
-```
-    /*squareup library*/
-    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
-    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
-    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
-    compile 'com.android.support:support-v13:23.1.1'
-    /*rx library*/
-    compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'io.reactivex:rxjava:1.1.0'
-    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
-    compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.3.0'
-    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.3.0'
-    compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.3.0'
-    compile 'com.jakewharton.rxbinding:rxbinding-design:0.3.0'
-    /*other library*/
-    compile 'com.github.bumptech.glide:glide:3.6.1'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.github.orhanobut:logger:1.12'
-    compile 'com.github.rey5137:material:1.2.2'
-    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
-  ```
+>走过路过不要错过~ 最后无耻的求一下**STAR**
