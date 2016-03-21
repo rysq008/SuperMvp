@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.StrictMode;
 
+import com.ly.supermvp.utils.CrashHandler;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.squareup.leakcanary.LeakCanary;
@@ -22,6 +23,8 @@ import static android.os.Build.VERSION_CODES.GINGERBREAD;
  */
 public class MyApplication extends Application {
     private static MyApplication instance;
+
+    public static String cacheDir = "";
 //    private RefWatcher refWatcher;
 
     @Override
@@ -34,6 +37,30 @@ public class MyApplication extends Application {
         this.enabledStrictMode();
         //LeakCanary检测OOM
         LeakCanary.install(this);
+
+        //初始化日志输出工具
+        CrashHandler.init(new CrashHandler(getApplicationContext()));
+
+        /**
+         * 如果存在SD卡则将缓存写入SD卡,否则写入手机内存
+         */
+
+        if (getApplicationContext().getExternalCacheDir() != null && isExistSDCard()) {
+            cacheDir = getApplicationContext().getExternalCacheDir().toString();
+
+        }
+        else {
+            cacheDir = getApplicationContext().getCacheDir().toString();
+        }
+    }
+
+    private boolean isExistSDCard() {
+        if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     private void enabledStrictMode() {
