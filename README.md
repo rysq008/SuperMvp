@@ -54,6 +54,22 @@ Github地址：https://github.com/liuling07/SimpleNews
 * WeiBo:http://weibo.com/liuyang6
 
 ###引入的第三方库
+####squarup出品，必属精品, 不用过多介绍
+* [Retrofit](https://github.com/square/retrofit)
+* [LeakCanary](https://github.com/square/leakcanary)
+
+####Rx系列
+* [RxJava](https://github.com/ReactiveX/RxJava)
+* [RxAndroid](https://github.com/ReactiveX/RxAndroid)
+* [RxBinding](https://github.com/JakeWharton/RxBinding) (使用时根据需要使用的控件导入相应的包)
+
+####其他热门
+* [Glide](https://github.com/bumptech/glide)(Google官方推荐图片加载库)
+* [Butter Knife](https://github.com/JakeWharton/butterknife)(专注于控件的注解，Dagger太全面)
+* [Logger](https://github.com/orhanobut/logger)(打印log现在可以好看多了，使用so easy)
+* [Material](https://github.com/rey5137/material)(一系列meterial的控件，不过用起来有点差强人意，wiki写得不是很全面)
+* [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout)(从未想过右滑返回可以做得这么简单，非常强大！)
+
 ```
     /*squareup library*/
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
