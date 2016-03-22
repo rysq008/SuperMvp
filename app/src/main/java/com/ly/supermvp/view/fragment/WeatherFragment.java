@@ -6,8 +6,8 @@ import android.view.View;
 import com.ly.supermvp.R;
 import com.ly.supermvp.delegate.WeatherFragmentDelegate;
 import com.ly.supermvp.model.OnNetRequestListener;
-import com.ly.supermvp.model.WeatherModel;
-import com.ly.supermvp.model.WeatherModelImpl;
+import com.ly.supermvp.model.entity.weather.WeatherModel;
+import com.ly.supermvp.model.entity.weather.WeatherModelImpl;
 import com.ly.supermvp.model.entity.weather.ShowApiWeather;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 import com.orhanobut.logger.Logger;
@@ -63,12 +63,12 @@ public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> 
         mWeatherModel.netLoadWeatherWithLocation(viewDelegate.getInputLocation(), NEED_MORE_DAY,
                 NEED_INDEX, NEED_ALARM, NEED_3_HOUR_FORCAST, new OnNetRequestListener<ShowApiWeather>() {
                     @Override
-                    public void start() {
+                    public void onStart() {
                         viewDelegate.showLoading();
                     }
 
                     @Override
-                    public void finish() {
+                    public void onFinish() {
                         viewDelegate.showContent();
                     }
 

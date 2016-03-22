@@ -1,6 +1,6 @@
-package com.ly.supermvp.model;
+package com.ly.supermvp.model.entity.weather;
 
-import com.ly.supermvp.model.entity.weather.ShowApiWeather;
+import com.ly.supermvp.model.OnNetRequestListener;
 import com.ly.supermvp.server.RetrofitService;
 import com.ly.supermvp.model.entity.ShowApiResponse;
 
@@ -27,7 +27,7 @@ public class WeatherModelImpl implements WeatherModel {
                                            final OnNetRequestListener listener) {
         //使用RxJava响应Retrofit
         Observable<ShowApiResponse<ShowApiWeather>> observable = RetrofitService.getInstance().
-                createNewsApi().getWeather(RetrofitService.getCacheControl(), area, needMoreDay,
+                createShowApi().getWeather(RetrofitService.getCacheControl(), area, needMoreDay,
                 needIndex, needAlarm, need3HourForcast);
 
         observable.subscribeOn(Schedulers.io())
@@ -35,20 +35,20 @@ public class WeatherModelImpl implements WeatherModel {
                 .doOnSubscribe(new Action0() {
                     @Override
                     public void call() {
-                        listener.start();
+                        listener.onStart();
                     }
                 })
                 .subscribe(new Subscriber<ShowApiResponse<ShowApiWeather>>() {
                     @Override
                     public void onCompleted() {
                         //仅成功后会回调
-                        listener.finish();
+                        listener.onFinish();
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         listener.onFailure(e);
-                        listener.finish();
+                        listener.onFinish();
                     }
 
                     @Override

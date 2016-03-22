@@ -3,6 +3,7 @@ package com.ly.supermvp.server.api;
 import com.ly.supermvp.common.BizInterface;
 import com.ly.supermvp.model.entity.news.ShowApiNews;
 import com.ly.supermvp.model.entity.ShowApiResponse;
+import com.ly.supermvp.model.entity.pictures.ShowApiPictures;
 import com.ly.supermvp.model.entity.weather.ShowApiWeather;
 
 import retrofit.Call;
@@ -23,6 +24,14 @@ import rx.Observable;
  *          Create by 2016/1/27 15:22
  */
 public interface ShowApi {
+    /**
+     * 新闻列表
+     * @param cacheControl
+     * @param page
+     * @param channelId
+     * @param channelName
+     * @return
+     */
     @GET(BizInterface.NEWS_URL)
     @Headers("apikey: " + BizInterface.API_KEY)
     Call<ShowApiResponse<ShowApiNews>> getNewsList(@Header("Cache-Control") String cacheControl,
@@ -47,4 +56,16 @@ public interface ShowApi {
                                                            @Query("needMoreDay") String needIndex,
                                                            @Query("needMoreDay") String needAlarm,
                                                            @Query("needMoreDay") String need3HourForcast);
+
+    /**
+     * 美图大全响应
+     * @param type "id": 4001, //此id很重要，在【图片查询】接口里将使用此id进行分类查询
+    "name": "清纯"
+     * @param page 页数
+     * @return
+     */
+    @GET(BizInterface.PICTURES_URL)
+    @Headers("apikey: " + BizInterface.API_KEY)
+    Observable<ShowApiResponse<ShowApiPictures>> getPictures(@Query("type") String type,
+                                                             @Query("page") int page);
 }
