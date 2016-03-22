@@ -1,7 +1,7 @@
 #  SuperMvp
 ## 使用MVP + RxJava+Retrofit+Glide+Material Design
 
-###简介
+###**简介**
 一款遵循**Material Design**风格的新闻，天气，手机号码归属地查询应用
 - Android一些新的技术的一个合集示例，我也是正在摸索，大家一起学习进步
 - API来自网络免费API
@@ -11,7 +11,11 @@
 - Glide加载缓存图片
 - 使用RecycleView展示新闻列表
 
-###版本
+###**版本**
+
+####V0.4
+- 修改第二个tab为**美图大全**，瀑布流显示
+- 支持图片点击放大，双指缩放，旋转
 
 ####V0.3
 - 天气预报查询，弹窗提醒
@@ -26,7 +30,7 @@
 - 下拉刷新与加载更多的解耦
 
 
-###截图
+###**截图**
 ####美图大全
 
 ![](./picture.gif)
@@ -43,7 +47,7 @@
 * [用MVP架构开发Android应用](http://kymjs.com/code/2015/11/09/01)
 * [对MVC、MVP、MVVM的理解](http://blog.csdn.net/napolunyishi/article/details/22722345)
 
-###开源项目
+###**开源项目**
 #####RengwuxianRxjava
 扔物线《给Android开发者的RxJava详解》文章中的例子  
 Github地址：https://github.com/androidmalin/RengwuxianRxjava
@@ -52,11 +56,11 @@ Github地址：https://github.com/androidmalin/RengwuxianRxjava
 基于Material Design和MVP的新闻客户端    
 Github地址：https://github.com/liuling07/SimpleNews
 
-### About me
+###** About me**
 * 如果不能运行或者有问题请Email: lyyx@outlook.com
 * WeiBo:http://weibo.com/liuyang6
 
-###引入的第三方库
+###**引入的第三方库**
 ####squarup出品，必属精品, 不用过多介绍
 * [Retrofit](https://github.com/square/retrofit)
 * [LeakCanary](https://github.com/square/leakcanary)
