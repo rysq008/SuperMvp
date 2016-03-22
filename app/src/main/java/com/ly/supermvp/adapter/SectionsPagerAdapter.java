@@ -30,9 +30,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return NewsFragment.newInstance();
             case 1:
-                return WeatherFragment.newInstance();
-            case 2:
                 return PicturesFragment.newInstance();
+            case 2:
+                return WeatherFragment.newInstance();
             default:
                 return NewsFragment.newInstance();
         }
@@ -51,9 +51,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return "最新新闻";
             case 1:
-                return "天气预报";
-            case 2:
                 return "美图大全";
+            case 2:
+                return "天气预报";
         }
         return null;
     }

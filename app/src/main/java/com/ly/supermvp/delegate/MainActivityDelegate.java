@@ -6,7 +6,6 @@ import android.support.v4.view.ViewPager;
 
 import com.ly.supermvp.R;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
-import com.rey.material.widget.FloatingActionButton;
 
 import butterknife.Bind;
 
@@ -26,10 +25,6 @@ public class MainActivityDelegate extends AppDelegate{
 
     @Bind(R.id.tabs)
     TabLayout mTabLayout;
-
-    @Bind(R.id.fab)
-    FloatingActionButton mFloatingActionButton;
-
     @Override
     public int getRootLayoutId() {
         return R.layout.activity_main;

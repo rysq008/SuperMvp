@@ -4,15 +4,22 @@ import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.LinearLayout;
 
+import com.bm.library.PhotoView;
 import com.jakewharton.rxbinding.support.v4.widget.RxSwipeRefreshLayout;
 import com.ly.supermvp.R;
 import com.ly.supermvp.adapter.PictureGridAdapter;
 import com.ly.supermvp.common.Constance;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
+import com.ly.supermvp.utils.GlideUtil;
 import com.ly.supermvp.view.LoadingView;
 import com.ly.supermvp.widget.ProgressLayout;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.Holder;
+import com.orhanobut.dialogplus.ViewHolder;
 
 import butterknife.Bind;
 import rx.functions.Action1;
@@ -29,6 +36,9 @@ import rx.functions.Action1;
  */
 public class PicturesFragmentDelegate extends AppDelegate implements LoadingView {
     private static final int PRELOAD_SIZE = 6;
+
+    private LinearLayout ll_dialog_holder;
+    private DialogPlus mDialog;
 
     @Bind(R.id.list_progress)
     ProgressLayout list_progress;
@@ -90,7 +100,7 @@ public class PicturesFragmentDelegate extends AppDelegate implements LoadingView
                         new int[2])[1] >=
                         adapter.getItemCount() -
                                 PRELOAD_SIZE;
-                if(!list_swipe_refresh.isRefreshing() && isBottom){
+                if (!list_swipe_refresh.isRefreshing() && isBottom) {
                     callBack.loadMore();
                 }
             }
@@ -107,8 +117,8 @@ public class PicturesFragmentDelegate extends AppDelegate implements LoadingView
         rv_picture.setAdapter(adapter);
     }
 
-    public void showRefreshLayout(){
-        if(!list_swipe_refresh.isRefreshing()){
+    public void showRefreshLayout() {
+        if (!list_swipe_refresh.isRefreshing()) {
             RxSwipeRefreshLayout.refreshing(list_swipe_refresh).call(true);
         }
     }
@@ -137,5 +147,33 @@ public class PicturesFragmentDelegate extends AppDelegate implements LoadingView
     @Override
     public Context getContext() {
         return null;
+    }
+
+
+    public void showDialog(String imgUrl) {
+        ll_dialog_holder = (LinearLayout) getActivity().getLayoutInflater().inflate(R.layout.dialog_image_preview, null);
+        Holder holder = new ViewHolder(ll_dialog_holder);
+        PhotoView photo_view = (PhotoView) holder.getInflatedView().findViewById(R.id.photo_view);
+        photo_view.enable();//启动缩放功能
+        GlideUtil.loadImage(getActivity(), imgUrl, photo_view);
+        showOnlyContentDialog(holder, Gravity.TOP, false);
+    }
+
+    /**
+     * 仅显示内容的dialog
+     *
+     * @param holder
+     * @param gravity  显示位置（居中，底部，顶部）
+     * @param expanded 是否支持展开（有列表时适用）
+     */
+    private void showOnlyContentDialog(Holder holder, int gravity,
+                                       boolean expanded) {
+        mDialog = DialogPlus.newDialog(getActivity())
+                .setContentHolder(holder)
+                .setGravity(gravity)
+                .setExpanded(expanded)
+                .setCancelable(true)
+                .create();
+        mDialog.show();
     }
 }
