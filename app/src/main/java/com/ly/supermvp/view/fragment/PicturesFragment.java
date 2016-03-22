@@ -1,5 +1,8 @@
 package com.ly.supermvp.view.fragment;
 
+import android.view.View;
+
+import com.ly.supermvp.R;
 import com.ly.supermvp.adapter.PictureGridAdapter;
 import com.ly.supermvp.delegate.PicturesFragmentDelegate;
 import com.ly.supermvp.delegate.SwipeRefreshAndLoadMoreCallBack;
@@ -45,6 +48,12 @@ public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate
         super.initData();
         mPicturesModel = new PicturesModelImpl();
         mPictureGridAdapter = new PictureGridAdapter(mList, getActivity());
+        mPictureGridAdapter.setOnImageClickListener(new PictureGridAdapter.OnImageClickListener() {
+            @Override
+            public void onImageClick(View view, int position) {
+                viewDelegate.showDialog(mList.get(position).list.get(0).big);
+            }
+        });
 
         viewDelegate.setListAdapter(mPictureGridAdapter);
 
@@ -90,7 +99,12 @@ public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate
 
             @Override
             public void onFailure(Throwable t) {
-
+                viewDelegate.showError(R.string.load_error, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        netLoadPictures(true);
+                    }
+                });
             }
         });
     }

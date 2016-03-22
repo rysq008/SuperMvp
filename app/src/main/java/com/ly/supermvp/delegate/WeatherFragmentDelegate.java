@@ -35,7 +35,8 @@ public class WeatherFragmentDelegate extends AppDelegate implements LoadingView{
     private ImageView iv_weather;
     private TextView tv_weather, tv_aqi, tv_sd, tv_wind_direction, tv_wind_power, tv_temperature_time,
             tv_temperature;
-    private LinearLayout ll_holder;
+
+    private LinearLayout ll_dialog_holder;
 
     @Bind(R.id.progress_layout)
     ProgressLayout mProgressLayout;
@@ -59,8 +60,8 @@ public class WeatherFragmentDelegate extends AppDelegate implements LoadingView{
      * 显示当前天气弹窗
      */
     public void showNowWeatherDialog(ShowApiWeather weather) {
-        ll_holder = (LinearLayout) getActivity().getLayoutInflater().inflate(R.layout.dialog_weather, null);
-        Holder holder = new ViewHolder(ll_holder);
+        ll_dialog_holder = (LinearLayout) getActivity().getLayoutInflater().inflate(R.layout.dialog_weather, null);
+        Holder holder = new ViewHolder(ll_dialog_holder);
         findHolderChildView(holder);
         GlideUtil.loadImage(getActivity(), weather.now.weather_pic, iv_weather);
         tv_weather.setText(weather.now.weather);

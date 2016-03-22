@@ -31,6 +31,8 @@ public class PictureGridAdapter extends RecyclerView.Adapter{
     private List<PictureBody> mList;
     private Activity context;
 
+    private OnImageClickListener mOnImageClickListener;
+
     public PictureGridAdapter(List<PictureBody> mList, Activity context) {
         this.mList = mList;
         this.context = context;
@@ -58,7 +60,7 @@ public class PictureGridAdapter extends RecyclerView.Adapter{
         return mList.size();
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
+    public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.iv_picture)
         RatioImageView iv_picture;
         @Bind(R.id.tv_title)
@@ -68,6 +70,23 @@ public class PictureGridAdapter extends RecyclerView.Adapter{
             super(itemView);
             ButterKnife.bind(this, itemView);
             iv_picture.setOriginalSize(50, 50);
+            iv_picture.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            mOnImageClickListener.onImageClick(v, this.getPosition());
+        }
+    }
+
+    public void setOnImageClickListener(OnImageClickListener onItemClickListener) {
+        this.mOnImageClickListener = onItemClickListener;
+    }
+
+    /**
+     * 点击条目图片接口
+     */
+    public interface OnImageClickListener {
+        void onImageClick(View view, int position);
     }
 }
