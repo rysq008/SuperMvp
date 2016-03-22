@@ -28,10 +28,13 @@
 
 ###截图
 ####美图大全
-![](http://7xrdzx.com1.z0.glb.clouddn.com/picture.gif)
+
+![](./picture.gif)
 ####新闻
+
 ![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_news.jpg)
 ####天气预报
+
 ![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
 
 ### 深受以下文章影响，感谢大神们的无私讲解
