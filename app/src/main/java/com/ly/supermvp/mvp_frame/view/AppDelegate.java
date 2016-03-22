@@ -92,7 +92,6 @@ public abstract class AppDelegate implements IDelegate {
     }
 
     public void showToast(String msg) {
-        ToastUtils.register(rootView.getContext());
         ToastUtils.showShort(msg);
 //        Toast.makeText(rootView.getContext(), msg, Toast.LENGTH_SHORT).show();
     }

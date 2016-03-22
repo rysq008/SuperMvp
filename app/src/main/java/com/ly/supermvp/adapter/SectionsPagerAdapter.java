@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.ly.supermvp.view.activity.MainActivity;
 import com.ly.supermvp.view.fragment.NewsFragment;
+import com.ly.supermvp.view.fragment.PicturesFragment;
 import com.ly.supermvp.view.fragment.WeatherFragment;
 
 /**
@@ -31,8 +31,12 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return NewsFragment.newInstance();
             case 1:
                 return WeatherFragment.newInstance();
+            case 2:
+                return PicturesFragment.newInstance();
+            default:
+                return NewsFragment.newInstance();
         }
-        return MainActivity.PlaceholderFragment.newInstance(position + 1);
+//        return MainActivity.PlaceholderFragment.newInstance(position + 1);
     }
 
     @Override

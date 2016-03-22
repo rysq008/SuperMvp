@@ -14,12 +14,12 @@ public interface OnNetRequestListener<T> {
     /**
      * 网络请求开始
      */
-    void start();
+    void onStart();
 
     /**
      * 网络请求结束
      */
-    void finish();
+    void onFinish();
 
     /**
      * 网络请求成功

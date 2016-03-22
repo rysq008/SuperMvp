@@ -28,8 +28,7 @@ import rx.functions.Action1;
  *          <p/>
  *          Create by 2016/1/27 14:34
  */
-public class NewsFragmentDelegate extends AppDelegate implements LoadingView,
-        SwipeRefreshLayout.OnRefreshListener {
+public class NewsFragmentDelegate extends AppDelegate implements LoadingView{
     @Bind(R.id.list_progress)
     ProgressLayout mProgressLayout;
     @Bind(R.id.list_swipe_refresh)
@@ -54,10 +53,16 @@ public class NewsFragmentDelegate extends AppDelegate implements LoadingView,
         initSwipeRefreshLayout();
     }
 
-    private void initSwipeRefreshLayout() {
-        mSwipeRefreshLayout.setColorSchemeResources(Constance.colors);
+    private void initRecyclerView() {
+//        mRecyclerView.addItemDecoration(new ListItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setHasFixedSize(true);
         mRecycleViewLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mRecycleViewLayoutManager);
+    }
+
+    private void initSwipeRefreshLayout() {
+        mSwipeRefreshLayout.setColorSchemeResources(Constance.colors);
     }
 
     /**
@@ -106,21 +111,9 @@ public class NewsFragmentDelegate extends AppDelegate implements LoadingView,
     }
 
 
-    public void initRecyclerView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        mRecyclerView.addItemDecoration(new ListItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setHasFixedSize(true);
-    }
-
     public void setListAdapter(NewsListAdapter adapter) {
         mRecyclerView.setAdapter(adapter);
     }
-
-//    @Override
-//    public boolean isContent() {
-//        return mProgressLayout.isContent() || mSwipeRefreshLayout.isRefreshing();
-//    }
 
     @Override
     public void showLoading() {
@@ -146,28 +139,5 @@ public class NewsFragmentDelegate extends AppDelegate implements LoadingView,
     @Override
     public Context getContext() {
         return null;
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void onRefresh() {
-
-    }
-
-    /**
-     * 下拉刷新与加载更多接口，用于presenter与view解耦
-     */
-    public interface SwipeRefreshAndLoadMoreCallBack {
-        /**
-         * 下拉刷新
-         */
-        void refresh();
-
-        /**
-         * 加载更多
-         */
-        void loadMore();
     }
 }

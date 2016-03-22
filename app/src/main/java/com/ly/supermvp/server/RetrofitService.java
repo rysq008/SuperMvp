@@ -61,7 +61,7 @@ public class RetrofitService {
 
     private volatile static ShowApi showApi = null;
 
-    public static ShowApi createNewsApi() {
+    public static ShowApi createShowApi() {
         if (showApi == null) {
             synchronized (RetrofitService.class) {
                 if (showApi == null) {

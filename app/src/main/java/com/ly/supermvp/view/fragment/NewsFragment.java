@@ -6,12 +6,12 @@ import android.view.View;
 import com.ly.supermvp.R;
 import com.ly.supermvp.adapter.NewsListAdapter;
 import com.ly.supermvp.delegate.NewsFragmentDelegate;
-import com.ly.supermvp.model.NewsModel;
-import com.ly.supermvp.model.NewsModelImpl;
+import com.ly.supermvp.delegate.SwipeRefreshAndLoadMoreCallBack;
 import com.ly.supermvp.model.OnNetRequestListener;
 import com.ly.supermvp.model.entity.news.NewsBody;
+import com.ly.supermvp.model.entity.news.NewsModel;
+import com.ly.supermvp.model.entity.news.NewsModelImpl;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
-import com.ly.supermvp.utils.ToastUtils;
 import com.ly.supermvp.view.activity.NewsDetailActivity;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import java.util.List;
  *          <p/>
  *          Create by 2016/1/27 11:04
  */
-public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implements NewsFragmentDelegate.SwipeRefreshAndLoadMoreCallBack {
+public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implements SwipeRefreshAndLoadMoreCallBack {
     private NewsModel mNewsModel;
     private int mPageNum = 1;
     private NewsListAdapter mAdapter;
@@ -51,7 +51,6 @@ public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implem
     @Override
     protected void initData() {
         super.initData();
-        ToastUtils.register(getActivity());
         mNewsModel = new NewsModelImpl();
 
         mAdapter = new NewsListAdapter(getActivity(), mNews);
@@ -91,12 +90,12 @@ public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implem
         }
         mNewsModel.netLoadNewsList(mPageNum, NewsModelImpl.CHANNEL_ID, NewsModelImpl.CHANNEL_NAME, new OnNetRequestListener<List<NewsBody>>() {
             @Override
-            public void start() {
+            public void onStart() {
 
             }
 
             @Override
-            public void finish() {
+            public void onFinish() {
 
             }
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.StrictMode;
 
 import com.ly.supermvp.utils.CrashHandler;
+import com.ly.supermvp.utils.ToastUtils;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.squareup.leakcanary.LeakCanary;
@@ -33,6 +34,8 @@ public class MyApplication extends Application {
 
         Logger.init().logLevel(LogLevel.FULL);
         instance = (MyApplication) getApplicationContext();
+
+        ToastUtils.register(this);
 
         this.enabledStrictMode();
         //LeakCanary检测OOM

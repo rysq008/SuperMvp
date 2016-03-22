@@ -1,6 +1,6 @@
-package com.ly.supermvp.model;
+package com.ly.supermvp.model.entity.weather;
 
-import com.ly.supermvp.model.entity.weather.ShowApiWeather;
+import com.ly.supermvp.model.OnNetRequestListener;
 
 /**
  * <Pre>
