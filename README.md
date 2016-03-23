@@ -1,17 +1,21 @@
 #  SuperMvp
-## 使用MVP + RxJava+Retrofit+Glide+Material Design
+## **MVP + RxJava+Retrofit+Glide+Material Design**
 
-###简介
-一款遵循**Material Design**风格的新闻，天气，手机号码归属地查询应用
-- Android一些新的技术的一个合集示例，我也是正在摸索，大家一起学习进步
-- API来自网络免费API
-- MVP模式（使用ViewDelegate解耦，非常感谢**kymjs**提供的mvp思想，虽然有些地方我有点不太理解，但是决定在这个应用上做个最佳实践）@kymjs(https://github.com/kymjs/TheMVP)
-- leakcanary引入(仅仅是引入)
+###**简介**
+一款遵循**Material Design**风格的新闻，美图，天气查询应用
+- Android一些次新的技术的一个合集示例
+- API来自网络免费API（感谢提供api的服务商，良心啊~）
+- MVP模式（使用ViewDelegate解耦，非常感谢**kymjs**提供的mvp思想，在他的基础上我有一些改动，虽然有些地方我有点不太理解，但是决定在这个应用上做个最佳实践）@kymjs(https://github.com/kymjs/TheMVP)
+- leakcanary引入(这个还在摸索到底怎么用)
 - Retrofit（+RxJava）网络请求
 - Glide加载缓存图片
 - 使用RecycleView展示新闻列表
 
-###版本
+###**版本**
+
+####V0.4
+- 修改第二个tab为**美图大全**，瀑布流显示，“美图”看个够。。。
+- 支持图片点击放大，双指缩放，旋转
 
 ####V0.3
 - 天气预报查询，弹窗提醒
@@ -25,9 +29,15 @@
 - 整体框架搭建完毕，新闻列表功能已经实现，各功能正常
 - 下拉刷新与加载更多的解耦
 
+####计划
+- 将图片缓存进数据库
+- 抽取出一个公共的recycleview代理类（grid，list合二为一）
+- 加上完整的注释
+- 夜间模式
 
-###截图
-####美图大全
+
+###**截图**
+####美图
 
 ![](./picture.gif)
 ####新闻
@@ -43,7 +53,7 @@
 * [用MVP架构开发Android应用](http://kymjs.com/code/2015/11/09/01)
 * [对MVC、MVP、MVVM的理解](http://blog.csdn.net/napolunyishi/article/details/22722345)
 
-###开源项目
+###**开源项目**
 #####RengwuxianRxjava
 扔物线《给Android开发者的RxJava详解》文章中的例子  
 Github地址：https://github.com/androidmalin/RengwuxianRxjava
@@ -52,11 +62,11 @@ Github地址：https://github.com/androidmalin/RengwuxianRxjava
 基于Material Design和MVP的新闻客户端    
 Github地址：https://github.com/liuling07/SimpleNews
 
-### About me
+###**About me**
 * 如果不能运行或者有问题请Email: lyyx@outlook.com
 * WeiBo:http://weibo.com/liuyang6
 
-###引入的第三方库
+###**引入的第三方库**
 ####squarup出品，必属精品, 不用过多介绍
 * [Retrofit](https://github.com/square/retrofit)
 * [LeakCanary](https://github.com/square/leakcanary)
@@ -72,7 +82,6 @@ Github地址：https://github.com/liuling07/SimpleNews
 * [Logger](https://github.com/orhanobut/logger)(打印log现在可以好看多了，使用so easy)
 * [Material](https://github.com/rey5137/material)(一系列meterial的控件，不过用起来有点差强人意，wiki写得不是很全面)
 * [SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout)(从未想过右滑返回可以做得这么简单，非常强大！)
-* [PhotoView](https://github.com/bm-x/PhotoView)(支持旋转的photoview，不过没发现有设置单击图片的回调，直接设置OnclickListener不行，
-**chrisbanes/PhotoView**提供onPhotoTapListener是可以的)
+* [PhotoView](https://github.com/bm-x/PhotoView)(支持旋转的photoview，不过没发现有设置单击图片的回调，直接设置OnclickListener不行，**chrisbanes/PhotoView**提供onPhotoTapListener是可以的)
 
->走过路过不要错过~ 最后无耻的求一下**STAR**
+>嘿~走过路过不要错过~ 最后无耻的求一下**STAR**
