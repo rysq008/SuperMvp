@@ -1,10 +1,10 @@
 #  SuperMvp
-## **MVP + RxJava+Retrofit+Glide+Material Design**
+## **MVP + RxJava + Retrofit + Glide + Material Design**
 
 ###**简介**
 一款遵循**Material Design**风格的新闻，美图，天气查询应用
 - Android一些次新的技术的一个合集示例
-- API来自网络免费API（感谢提供api的服务商，良心啊~）
+- API来自网络免费API（感谢提供api的服务商，良心啊~，*不过这几天不太稳定，时不时返回一个html代码，有待测试*）
 - MVP模式（使用ViewDelegate解耦，非常感谢**kymjs**提供的mvp思想，在他的基础上我有一些改动，虽然有些地方我有点不太理解，但是决定在这个应用上做个最佳实践）@kymjs(https://github.com/kymjs/TheMVP)
 - leakcanary引入(这个还在摸索到底怎么用)
 - Retrofit（+RxJava）网络请求
@@ -16,13 +16,14 @@
 ####V0.4
 - 修改第二个tab为**美图大全**，瀑布流显示，“美图”看个够。。。
 - 支持图片点击放大，双指缩放，旋转
+- 抽取出一个公共的recyclerview代理类（grid，list合二为一），并支持下拉刷新
 
 ####V0.3
 - 天气预报查询，弹窗提醒
 - 修改新闻列表为cardview展示
 - 支持新闻查看详情，CollapsingToolbarLayout +　NestedScrollView
 - 支持右滑返回
-- 增加缓存机制(使用Retrofit和Okhttp实现网络缓存)
+- 增加*离线缓存*机制(使用Retrofit和Okhttp实现网络缓存)
 - 崩溃捕捉并写入本地文件(有存储卡写到存储卡，没有保存到内存),目录：**/data/data/com.ly.supermvp/cache//Log/log.txt**，基于此功能可以后期做一个友好的应用crash提示
 
 ####V0.2
@@ -31,7 +32,6 @@
 
 ####计划
 - 将图片缓存进数据库
-- 抽取出一个公共的recycleview代理类（grid，list合二为一）
 - 加上完整的注释
 - 夜间模式
 
