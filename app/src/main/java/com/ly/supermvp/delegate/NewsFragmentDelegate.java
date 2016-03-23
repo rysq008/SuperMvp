@@ -1,22 +1,11 @@
 package com.ly.supermvp.delegate;
 
-import android.content.Context;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
-import com.jakewharton.rxbinding.support.v4.widget.RxSwipeRefreshLayout;
-import com.ly.supermvp.R;
 import com.ly.supermvp.adapter.NewsListAdapter;
-import com.ly.supermvp.common.Constance;
-import com.ly.supermvp.mvp_frame.view.AppDelegate;
 import com.ly.supermvp.view.LoadingView;
-import com.ly.supermvp.widget.ProgressLayout;
-
-import butterknife.Bind;
-import rx.functions.Action1;
 
 /**
  * <Pre>
@@ -28,65 +17,28 @@ import rx.functions.Action1;
  *          <p/>
  *          Create by 2016/1/27 14:34
  */
-public class NewsFragmentDelegate extends AppDelegate implements LoadingView{
-    @Bind(R.id.list_progress)
-    ProgressLayout mProgressLayout;
-    @Bind(R.id.list_swipe_refresh)
-    SwipeRefreshLayout mSwipeRefreshLayout;
-    @Bind(R.id.rv_news)
-    RecyclerView mRecyclerView;
-
+public class NewsFragmentDelegate extends BaseRecyclerViewDelegate implements LoadingView{
     /**
      * 用于加载更多的列表布局管理器
      */
     private LinearLayoutManager mRecycleViewLayoutManager;
 
     @Override
-    public int getRootLayoutId() {
-        return R.layout.fragment_news;
-    }
-
-    @Override
-    public void initWidget() {
-        super.initWidget();
-        initRecyclerView();
-        initSwipeRefreshLayout();
-    }
-
-    private void initRecyclerView() {
-//        mRecyclerView.addItemDecoration(new ListItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setHasFixedSize(true);
+    void initRecyclerView() {
+        //设置分割线
+//        recyclerview.addItemDecoration(new ListItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
+        recyclerview.setItemAnimator(new DefaultItemAnimator());
+        recyclerview.setHasFixedSize(true);
         mRecycleViewLayoutManager = new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(mRecycleViewLayoutManager);
+        recyclerview.setLayoutManager(mRecycleViewLayoutManager);
     }
-
-    private void initSwipeRefreshLayout() {
-        mSwipeRefreshLayout.setColorSchemeResources(Constance.colors);
-    }
-
-    /**
-     * 设置下拉刷新接口
-     *
-     * @param callBack 下拉刷新的回调接口
-     */
-    public void registerSwipeRefreshCallBack(final SwipeRefreshAndLoadMoreCallBack callBack) {
-        RxSwipeRefreshLayout.refreshes(mSwipeRefreshLayout).subscribe(new Action1<Void>() {
-            @Override
-            public void call(Void aVoid) {
-                // TODO: 2016/2/29 调用fragment的方法加载数据，需要解耦(已用接口解决)
-                callBack.refresh();
-            }
-        });
-    }
-
     /**
      * 设置加载更多接口
      *
      * @param callBack 加载更多的回调
      */
     public void registerLoadMoreCallBack(final SwipeRefreshAndLoadMoreCallBack callBack, final NewsListAdapter adapter) {
-        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        recyclerview.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             private int lastVisibleItem;
 
@@ -107,37 +59,5 @@ public class NewsFragmentDelegate extends AppDelegate implements LoadingView{
                 }
             }
         });
-
-    }
-
-
-    public void setListAdapter(NewsListAdapter adapter) {
-        mRecyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public void showLoading() {
-        mProgressLayout.showLoading();
-    }
-
-    @Override
-    public void showContent() {
-        RxSwipeRefreshLayout.refreshing(mSwipeRefreshLayout).call(false);
-        if (!mProgressLayout.isContent()) {
-            mProgressLayout.showContent();
-        }
-    }
-
-    @Override
-    public void showError(int messageId, View.OnClickListener listener) {
-        RxSwipeRefreshLayout.refreshing(mSwipeRefreshLayout).call(false);
-        if (!mProgressLayout.isError()) {
-            mProgressLayout.showError(messageId, listener);
-        }
-    }
-
-    @Override
-    public Context getContext() {
-        return null;
     }
 }
