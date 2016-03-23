@@ -50,6 +50,9 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
         initRecyclerView();
     }
 
+    /**
+     * 初始化下拉刷新控件
+     */
     private void initSwipeRefreshLayout() {
         swipe_refresh_layout.setColorSchemeResources(Constance.colors);
     }
