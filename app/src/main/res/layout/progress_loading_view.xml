@@ -24,7 +24,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/material_32dp"
       android:layout_centerHorizontal="true"
-      android:text="加载中"
+      android:text="@string/loading"
       android:textColor="@android:color/black"
       android:textSize="@dimen/material_16sp"
       />

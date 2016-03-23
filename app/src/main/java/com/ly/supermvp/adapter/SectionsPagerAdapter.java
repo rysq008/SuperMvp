@@ -1,9 +1,11 @@
 package com.ly.supermvp.adapter;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.ly.supermvp.R;
 import com.ly.supermvp.view.fragment.NewsFragment;
 import com.ly.supermvp.view.fragment.PicturesFragment;
 import com.ly.supermvp.view.fragment.WeatherFragment;
@@ -19,9 +21,10 @@ import com.ly.supermvp.view.fragment.WeatherFragment;
  *          Create by 2016/1/27 16:26
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-    public SectionsPagerAdapter(FragmentManager fm) {
+    private Context context;
+    public SectionsPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
+        this.context = context;
     }
 
     @Override
@@ -49,11 +52,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "最新新闻";
+                return context.getResources().getString(R.string.main_tab_news);
             case 1:
-                return "美图大全";
+                return context.getResources().getString(R.string.main_tab_picture);
             case 2:
-                return "天气预报";
+                return context.getResources().getString(R.string.main_tab_weather);
         }
         return null;
     }
