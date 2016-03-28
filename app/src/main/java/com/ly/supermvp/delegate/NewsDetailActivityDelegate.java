@@ -59,7 +59,7 @@ public class NewsDetailActivityDelegate extends AppDelegate{
         ws.setAppCacheEnabled(true);
         ws.setSupportZoom(false);
         ws.setUseWideViewPort(true);// 可任意比例缩放
-        ws.setJavaScriptCanOpenWindowsAutomatically(true);
+        ws.setJavaScriptCanOpenWindowsAutomatically(true);//js支持
         ws.setDomStorageEnabled(true);
 
         mWebView.setWebViewClient(new WebViewClient(){

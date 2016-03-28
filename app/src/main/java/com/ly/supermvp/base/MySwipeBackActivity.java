@@ -20,7 +20,7 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
  *          Create by 2016/3/6 15:31
  */
 public class MySwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
-    private SwipeBackActivityHelper mHelper;
+    private SwipeBackActivityHelper mHelper;//右滑删除Activity帮助类
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +50,12 @@ public class MySwipeBackActivity extends AppCompatActivity implements SwipeBackA
 
     @Override
     public void setSwipeBackEnable(boolean enable) {
-        getSwipeBackLayout().setEnableGesture(enable);
+        getSwipeBackLayout().setEnableGesture(enable);//启动手势
     }
 
     @Override
     public void scrollToFinishActivity() {
-        Utils.convertActivityToTranslucent(this);
-        getSwipeBackLayout().scrollToFinishActivity();
+        Utils.convertActivityToTranslucent(this);//将当前类转换为半透明效果（精髓所在）
+        getSwipeBackLayout().scrollToFinishActivity();//关闭当前activity
     }
 }

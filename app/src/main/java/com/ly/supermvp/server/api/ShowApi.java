@@ -53,9 +53,9 @@ public interface ShowApi {
     Observable<ShowApiResponse<ShowApiWeather>> getWeather(@Header("Cache-Control") String cacheControl,
                                                            @Query("area") String area,
                                                            @Query("needMoreDay") String needMoreDay,
-                                                           @Query("needMoreDay") String needIndex,
-                                                           @Query("needMoreDay") String needAlarm,
-                                                           @Query("needMoreDay") String need3HourForcast);
+                                                           @Query("needIndex") String needIndex,
+                                                           @Query("needAlarm") String needAlarm,
+                                                           @Query("need3HourForcast") String need3HourForcast);
 
     /**
      * 美图大全响应

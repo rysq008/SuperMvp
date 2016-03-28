@@ -36,7 +36,7 @@ public class MainActivityDelegate extends AppDelegate{
     }
 
     public void setViewPagerAdapter(FragmentPagerAdapter adapter){
-        mViewpager.setOffscreenPageLimit(3);
+        mViewpager.setOffscreenPageLimit(3);//设置viewpager预加载页面数
         mViewpager.setAdapter(adapter);
     }
 

@@ -2,6 +2,7 @@ package com.ly.supermvp.model.entity.news;
 
 /**
  * <Pre>
+ *     新闻图片
  * </Pre>
  *
  * @author 刘阳

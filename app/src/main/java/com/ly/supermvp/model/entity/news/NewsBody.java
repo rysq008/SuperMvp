@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * <Pre>
+ *     单条新闻
  * </Pre>
  *
  * @author 刘阳

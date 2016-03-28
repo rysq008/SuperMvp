@@ -27,9 +27,9 @@ import rx.functions.Action1;
  */
 public abstract class BaseRecyclerViewDelegate extends AppDelegate implements LoadingView{
     @Bind(R.id.progress_layout)
-    ProgressLayout progress_layout;
+    ProgressLayout progress_layout;//进度条布局（通用，可现实错误按钮，点击重试）
     @Bind(R.id.swipe_refresh_layout)
-    SwipeRefreshLayout swipe_refresh_layout;
+    SwipeRefreshLayout swipe_refresh_layout;//下拉刷新控件
     @Bind(R.id.recyclerview)
     RecyclerView recyclerview;
 
@@ -40,7 +40,7 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
 
     @Override
     public int getRootLayoutId() {
-        return R.layout.fragment_base_recyclerview;
+        return R.layout.layout_base_recyclerview;
     }
 
     @Override
@@ -54,7 +54,7 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
      * 初始化下拉刷新控件
      */
     private void initSwipeRefreshLayout() {
-        swipe_refresh_layout.setColorSchemeResources(Constance.colors);
+        swipe_refresh_layout.setColorSchemeResources(Constance.colors);//设置下拉刷新控件变换的四个颜色
     }
 
     /**
@@ -66,7 +66,7 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
         RxSwipeRefreshLayout.refreshes(swipe_refresh_layout).subscribe(new Action1<Void>() {
             @Override
             public void call(Void aVoid) {
-                // TODO: 2016/2/29 调用fragment的方法加载数据，需要解耦(已用接口解决)
+                // 2016/2/29 调用fragment的方法加载数据，需要解耦(已用接口解决)
                 callBack.refresh();
             }
         });

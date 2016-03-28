@@ -67,10 +67,14 @@ public class WeatherFragmentDelegate extends AppDelegate implements LoadingView{
         tv_weather.setText(weather.now.weather);
         tv_temperature.setText(weather.now.temperature + "℃");
         tv_temperature_time.setText(weather.now.temperature_time);
-        tv_aqi.setText("污染指数:" + weather.now.aqi);
-        tv_sd.setText("湿度:" + weather.now.sd);
-        tv_wind_direction.setText("风向:" + weather.now.wind_direction);
-        tv_wind_power.setText("风力强度:" + weather.now.wind_power);
+        tv_aqi.setText(String.format(getActivity().getResources().getString(R.string.weather_dialog_aqi),
+                weather.now.aqi));
+        tv_sd.setText(String.format(getActivity().getResources().getString(R.string.weather_dialog_sd),
+                weather.now.sd));
+        tv_wind_direction.setText(String.format(getActivity().getResources().getString(R.string.weather_dialog_wind_direction),
+                weather.now.wind_direction));
+        tv_wind_power.setText(String.format(getActivity().getResources().getString(R.string.weather_dialog_wind_power),
+                weather.now.wind_power));
         showOnlyContentDialog(holder, Gravity.BOTTOM, false);
     }
 

@@ -2,7 +2,7 @@ package com.ly.supermvp.model.entity.weather;
 
 /**
  * <Pre>
- *     天气响应实体类
+ *     天气
  * </Pre>
  *
  * @author 刘阳

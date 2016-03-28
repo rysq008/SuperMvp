@@ -2,7 +2,7 @@ package com.ly.supermvp.model.entity.pictures;
 
 /**
  * <Pre>
- * 图片实体
+ * 大中小图片
  * </Pre>
  *
  * @author 刘阳

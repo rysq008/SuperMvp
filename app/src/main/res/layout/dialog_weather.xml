@@ -55,7 +55,7 @@
         android:drawableLeft="@mipmap/ic_api"
         android:drawablePadding="@dimen/material_16dp"
         android:gravity="center_vertical"
-        android:text="@string/weather_dialog_aqi"
+        tools:text="@string/weather_dialog_aqi"
         android:textSize="@dimen/material_20sp" />
 
     <TextView
@@ -66,7 +66,7 @@
         android:drawableLeft="@mipmap/ic_sd"
         android:drawablePadding="@dimen/material_16dp"
         android:gravity="center_vertical"
-        android:text="@string/weather_dialog_sd"
+        tools:text="@string/weather_dialog_sd"
         android:textSize="20sp" />
 
     <TextView
@@ -77,7 +77,7 @@
         android:drawableLeft="@mipmap/ic_wind_direction"
         android:drawablePadding="@dimen/material_16dp"
         android:gravity="center_vertical"
-        android:text="@string/weather_dialog_wind_direction"
+        tools:text="@string/weather_dialog_wind_direction"
         android:textSize="20sp" />
 
     <TextView
@@ -88,6 +88,6 @@
         android:drawableLeft="@mipmap/ic_wind_power"
         android:drawablePadding="@dimen/material_16dp"
         android:gravity="center_vertical"
-        android:text="@string/weather_dialog_wind_power"
+        tools:text="@string/weather_dialog_wind_power"
         android:textSize="20sp" />
 </LinearLayout>

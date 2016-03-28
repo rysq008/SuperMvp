@@ -4,7 +4,7 @@ import com.ly.supermvp.model.OnNetRequestListener;
 
 /**
  * <Pre>
- *     天气预报model
+ *     天气预报接口
  * </Pre>
  *
  * @author 刘阳

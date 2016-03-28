@@ -12,10 +12,10 @@
     <string name="main_tab_weather">天气预报</string>
 
     <!--天气预报-->
-    <string name="weather_dialog_aqi">污染指数</string>
-    <string name="weather_dialog_sd">湿度</string>
-    <string name="weather_dialog_wind_direction">风向</string>
-    <string name="weather_dialog_wind_power">风力强度</string>
+    <string name="weather_dialog_aqi">污染指数:%1$s</string>
+    <string name="weather_dialog_sd">湿度:%1$s</string>
+    <string name="weather_dialog_wind_direction">风向:%1$s</string>
+    <string name="weather_dialog_wind_power">风力强度:%1$s</string>
     <string name="weather_edit_hint">请输入城市名(如：北京)</string>
     <string name="weather_btn">查询当前天气</string>
 </resources>

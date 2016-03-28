@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * <Pre>
- * 图片实体
+ * 美图大全图片
  * </Pre>
  *
  * @author 刘阳
