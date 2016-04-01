@@ -67,21 +67,21 @@ public class ProgressLayout extends RelativeLayout {
   }
 
   public void showLoading() {
-
+    currentState = State.LOADING;
     ProgressLayout.this.showLoadingView();
     ProgressLayout.this.hideErrorView();
     ProgressLayout.this.setContentVisibility(false);
   }
 
   public void showContent() {
-
+    currentState = State.CONTENT;
     ProgressLayout.this.hideLoadingView();
     ProgressLayout.this.hideErrorView();
     ProgressLayout.this.setContentVisibility(true);
   }
 
   public void showError(@StringRes int stringId, @NonNull OnClickListener onClickListener) {
-
+    currentState = State.ERROR;
     ProgressLayout.this.hideLoadingView();
     ProgressLayout.this.showErrorView();
 

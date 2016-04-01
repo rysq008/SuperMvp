@@ -7,9 +7,9 @@ import com.ly.supermvp.adapter.PictureGridAdapter;
 import com.ly.supermvp.delegate.PicturesFragmentDelegate;
 import com.ly.supermvp.delegate.SwipeRefreshAndLoadMoreCallBack;
 import com.ly.supermvp.model.OnNetRequestListener;
-import com.ly.supermvp.model.entity.pictures.PictureBody;
-import com.ly.supermvp.model.entity.pictures.PicturesModel;
-import com.ly.supermvp.model.entity.pictures.PicturesModelImpl;
+import com.ly.supermvp.model.pictures.PictureBody;
+import com.ly.supermvp.model.pictures.PicturesModel;
+import com.ly.supermvp.model.pictures.PicturesModelImpl;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 
 import java.util.ArrayList;

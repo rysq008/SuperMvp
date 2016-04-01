@@ -34,7 +34,7 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
     RecyclerView recyclerview;
 
     /**
-     * 初始化recycleview，必须重写
+     * 初始化recyclerview，必须重写
      */
     abstract void initRecyclerView();
 

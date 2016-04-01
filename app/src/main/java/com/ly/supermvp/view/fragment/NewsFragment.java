@@ -8,9 +8,9 @@ import com.ly.supermvp.adapter.NewsListAdapter;
 import com.ly.supermvp.delegate.NewsFragmentDelegate;
 import com.ly.supermvp.delegate.SwipeRefreshAndLoadMoreCallBack;
 import com.ly.supermvp.model.OnNetRequestListener;
-import com.ly.supermvp.model.entity.news.NewsBody;
-import com.ly.supermvp.model.entity.news.NewsModel;
-import com.ly.supermvp.model.entity.news.NewsModelImpl;
+import com.ly.supermvp.model.news.NewsBody;
+import com.ly.supermvp.model.news.NewsModel;
+import com.ly.supermvp.model.news.NewsModelImpl;
 import com.ly.supermvp.mvp_frame.presenter.FragmentPresenter;
 import com.ly.supermvp.view.activity.NewsDetailActivity;
 

@@ -3,6 +3,7 @@ package com.ly.supermvp.delegate;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.bm.library.PhotoView;
@@ -83,6 +84,12 @@ public class PicturesFragmentDelegate extends BaseRecyclerViewDelegate implement
         PhotoView photo_view = (PhotoView) holder.getInflatedView().findViewById(R.id.photo_view);
         photo_view.enable();//启动缩放功能
         GlideUtil.loadImage(getActivity(), imgUrl, photo_view);
+        photo_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
         showOnlyContentDialog(holder, Gravity.TOP, false);
     }
 

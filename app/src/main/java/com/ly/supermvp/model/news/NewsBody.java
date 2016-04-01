@@ -1,4 +1,4 @@
-package com.ly.supermvp.model.entity.news;
+package com.ly.supermvp.model.news;
 
 import java.util.List;
 

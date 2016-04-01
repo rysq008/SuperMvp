@@ -1,10 +1,10 @@
 package com.ly.supermvp.server.api;
 
 import com.ly.supermvp.common.BizInterface;
-import com.ly.supermvp.model.entity.news.ShowApiNews;
+import com.ly.supermvp.model.news.ShowApiNews;
 import com.ly.supermvp.model.entity.ShowApiResponse;
-import com.ly.supermvp.model.entity.pictures.ShowApiPictures;
-import com.ly.supermvp.model.entity.weather.ShowApiWeather;
+import com.ly.supermvp.model.pictures.ShowApiPictures;
+import com.ly.supermvp.model.weather.ShowApiWeather;
 
 import retrofit.Call;
 import retrofit.http.GET;
