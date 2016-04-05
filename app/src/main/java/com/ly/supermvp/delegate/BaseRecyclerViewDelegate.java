@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.jakewharton.rxbinding.support.v4.widget.RxSwipeRefreshLayout;
 import com.ly.supermvp.R;
-import com.ly.supermvp.common.Constance;
+import com.ly.supermvp.common.Constants;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
 import com.ly.supermvp.view.LoadingView;
 import com.ly.supermvp.widget.ProgressLayout;
@@ -27,7 +27,7 @@ import rx.functions.Action1;
  */
 public abstract class BaseRecyclerViewDelegate extends AppDelegate implements LoadingView{
     @Bind(R.id.progress_layout)
-    ProgressLayout progress_layout;//进度条布局（通用，可现实错误按钮，点击重试）
+    ProgressLayout progress_layout;//进度条布局（通用，可实现错误按钮，点击重试）
     @Bind(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipe_refresh_layout;//下拉刷新控件
     @Bind(R.id.recyclerview)
@@ -54,7 +54,7 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
      * 初始化下拉刷新控件
      */
     private void initSwipeRefreshLayout() {
-        swipe_refresh_layout.setColorSchemeResources(Constance.colors);//设置下拉刷新控件变换的四个颜色
+        swipe_refresh_layout.setColorSchemeResources(Constants.colors);//设置下拉刷新控件变换的四个颜色
     }
 
     /**

@@ -10,7 +10,7 @@ package com.ly.supermvp.common;
  *          <p/>
  *          Create by 2016/1/28 16:15
  */
-public interface Constance {
+public interface Constants {
     /**
      * 下拉刷新控件变化的四个颜色
      */

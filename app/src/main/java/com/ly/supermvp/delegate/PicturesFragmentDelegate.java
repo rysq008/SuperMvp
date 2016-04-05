@@ -29,7 +29,7 @@ import com.orhanobut.dialogplus.ViewHolder;
 public class PicturesFragmentDelegate extends BaseRecyclerViewDelegate implements LoadingView {
     private static final int PRELOAD_SIZE = 6;
 
-    private LinearLayout ll_dialog_holder;
+    private LinearLayout ll_dialog_holder;//弹窗的布局
     private DialogPlus mDialog;
 
     private StaggeredGridLayoutManager mGridViewLayoutManager;//recycleview视图样式管理器
@@ -53,12 +53,10 @@ public class PicturesFragmentDelegate extends BaseRecyclerViewDelegate implement
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                boolean isBottom = mGridViewLayoutManager.findLastCompletelyVisibleItemPositions(
-                        new int[2])[1] >=
-                        adapter.getItemCount() -
-                                PRELOAD_SIZE;
-                if (!swipe_refresh_layout.isRefreshing() && isBottom) {
-                    callBack.loadMore();
+                boolean isBottom = mGridViewLayoutManager.findLastCompletelyVisibleItemPositions(new int[2])[1]
+                        >= adapter.getItemCount() - PRELOAD_SIZE;
+                    if (!swipe_refresh_layout.isRefreshing() && isBottom) {
+                        callBack.loadMore();
                 }
             }
 
