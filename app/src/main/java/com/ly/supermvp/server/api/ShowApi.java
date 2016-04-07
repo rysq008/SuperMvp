@@ -66,6 +66,7 @@ public interface ShowApi {
      */
     @GET(BizInterface.PICTURES_URL)
     @Headers("apikey: " + BizInterface.API_KEY)
-    Observable<ShowApiResponse<ShowApiPictures>> getPictures(@Query("type") String type,
+    Observable<ShowApiResponse<ShowApiPictures>> getPictures(@Header("Cache-Control") String cacheControl,
+                                                             @Query("type") String type,
                                                              @Query("page") int page);
 }
