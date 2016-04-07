@@ -31,19 +31,15 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         Logger.init().logLevel(LogLevel.FULL);
         instance = (MyApplication) getApplicationContext();
-
+//        this.enabledStrictMode();
         ToastUtils.register(this);
-
-        this.enabledStrictMode();
         //LeakCanary检测OOM
         LeakCanary.install(this);
 
         //初始化日志输出工具
         CrashHandler.init(new CrashHandler(getApplicationContext()));
-
         /**
          * 如果存在SD卡则将缓存写入SD卡,否则写入手机内存
          */

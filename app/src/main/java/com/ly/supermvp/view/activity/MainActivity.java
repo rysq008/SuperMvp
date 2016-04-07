@@ -60,6 +60,11 @@ public class MainActivity extends ActivityPresenter<MainActivityDelegate> implem
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
     protected void initData() {
         super.initData();
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), this);
