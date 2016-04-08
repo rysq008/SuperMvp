@@ -5,12 +5,17 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.jakewharton.rxbinding.support.v4.widget.RxSwipeRefreshLayout;
 import com.ly.supermvp.R;
 import com.ly.supermvp.common.Constants;
 import com.ly.supermvp.mvp_frame.view.AppDelegate;
 import com.ly.supermvp.view.LoadingView;
 import com.ly.supermvp.widget.ProgressLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import rx.functions.Action1;
@@ -32,11 +37,28 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
     SwipeRefreshLayout swipe_refresh_layout;//下拉刷新控件
     @Bind(R.id.recyclerview)
     RecyclerView recyclerview;
+    //悬浮菜单
+    @Bind(R.id.floating_action_menu)
+    FloatingActionMenu floating_action_menu;
+    @Bind(R.id.floating_action_button1)
+    FloatingActionButton floating_action_button1;
+    @Bind(R.id.floating_action_button2)
+    FloatingActionButton floating_action_button2;
+    @Bind(R.id.floating_action_button3)
+    FloatingActionButton floating_action_button3;
+    @Bind(R.id.floating_action_button4)
+    FloatingActionButton floating_action_button4;
+
+    protected List<FloatingActionButton> mFloatingActionButtons;//悬浮菜单选项数组
 
     /**
      * 初始化recyclerview，必须重写
      */
     abstract void initRecyclerView();
+    /**
+     * 设置悬浮菜单是否显示，必须重写
+     */
+    abstract boolean setFloatingActionMenuVisible();
 
     @Override
     public int getRootLayoutId() {
@@ -48,6 +70,19 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
         super.initWidget();
         initSwipeRefreshLayout();
         initRecyclerView();
+        initFloatingActionMenu();
+    }
+    /**
+     * 初始化悬浮菜单
+     */
+    private void initFloatingActionMenu() {
+        floating_action_menu.setVisibility(setFloatingActionMenuVisible() ? View.VISIBLE : View.GONE);
+        floating_action_menu.setClosedOnTouchOutside(true);
+        mFloatingActionButtons = new ArrayList<>();
+        mFloatingActionButtons.add(floating_action_button1);
+        mFloatingActionButtons.add(floating_action_button2);
+        mFloatingActionButtons.add(floating_action_button3);
+        mFloatingActionButtons.add(floating_action_button4);
     }
 
     /**
@@ -55,6 +90,14 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
      */
     private void initSwipeRefreshLayout() {
         swipe_refresh_layout.setColorSchemeResources(Constants.colors);//设置下拉刷新控件变换的四个颜色
+    }
+
+    /**
+     * 设置是否隐藏悬浮菜单选项卡
+     * @param animate 是否动画
+     */
+    public void hideMenu(boolean animate){
+        floating_action_menu.close(animate);
     }
 
     /**
@@ -96,7 +139,6 @@ public abstract class BaseRecyclerViewDelegate extends AppDelegate implements Lo
             progress_layout.showError(messageId, listener);
         }
     }
-
     @Override
     public Context getContext() {
         return null;

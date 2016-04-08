@@ -15,7 +15,7 @@ import java.util.List;
  *          Create by 2016/3/21 16:02
  */
 public interface PicturesModel {
-    String ARG_TYPE = "4001";//类别 "清纯"
+    String DEFAULT_TYPE = "4001";//类别 "清纯"
 
     void netLoadPictures(String type, int page, OnNetRequestListener<List<PictureBody>> listener);
 }

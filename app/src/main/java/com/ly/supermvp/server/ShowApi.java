@@ -1,4 +1,4 @@
-package com.ly.supermvp.server.api;
+package com.ly.supermvp.server;
 
 import com.ly.supermvp.common.BizInterface;
 import com.ly.supermvp.model.news.ShowApiNews;
