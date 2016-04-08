@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.ly.supermvp.MyApplication;
 import com.ly.supermvp.common.BizInterface;
-import com.ly.supermvp.server.api.ShowApi;
 import com.ly.supermvp.utils.NetUtil;
 import com.orhanobut.logger.Logger;
 import com.squareup.okhttp.Cache;

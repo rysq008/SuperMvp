@@ -25,11 +25,12 @@ import java.util.List;
  *          <p/>
  *          Create by 2016/3/21 14:39
  */
-public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate> implements SwipeRefreshAndLoadMoreCallBack {
+public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate> implements SwipeRefreshAndLoadMoreCallBack, PicturesFragmentDelegate.FloatingActionButtonListener {
     private PicturesModel mPicturesModel;
     private PictureGridAdapter mPictureGridAdapter;
 
     private int mPageNum = 1;
+    private String mPictureId = PicturesModel.DEFAULT_TYPE;
 
     private List<PictureBody> mList = new ArrayList<>();
 
@@ -62,19 +63,25 @@ public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate
         //注册加载更多
         viewDelegate.registerLoadMoreCallBack(this, mPictureGridAdapter);
 
-        netLoadPictures(true);
+        netLoadPictures(mPictureId, true);
+    }
+
+    @Override
+    protected void initView() {
+        super.initView();
+        viewDelegate.setFloatingActionButtonListener(this);
     }
 
     /**
      * 网络获取图片
      */
-    private void netLoadPictures(final boolean isRefresh) {
+    private void netLoadPictures(String id, final boolean isRefresh) {
         if (isRefresh) {
             mPageNum = 1;
         } else {
             mPageNum++;
         }
-        mPicturesModel.netLoadPictures(PicturesModel.ARG_TYPE, mPageNum, new OnNetRequestListener<List<PictureBody>>() {
+        mPicturesModel.netLoadPictures(id, mPageNum, new OnNetRequestListener<List<PictureBody>>() {
             @Override
             public void onStart() {
                 viewDelegate.showRefreshLayout();
@@ -102,7 +109,7 @@ public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate
                 viewDelegate.showError(R.string.load_error, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        netLoadPictures(true);
+                        netLoadPictures(mPictureId, true);
                     }
                 });
             }
@@ -111,11 +118,17 @@ public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate
 
     @Override
     public void refresh() {
-        netLoadPictures(true);
+        netLoadPictures(mPictureId, true);
     }
 
     @Override
     public void loadMore() {
-        netLoadPictures(false);
+        netLoadPictures(mPictureId, false);
+    }
+
+    @Override
+    public void onClick(String id) {
+        mPictureId = id;
+        refresh();
     }
 }

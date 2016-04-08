@@ -112,7 +112,6 @@ public class WeatherFragmentDelegate extends AppDelegate implements LoadingView{
                 .create();
         dialog.show();
     }
-
     /**
      * 关闭软键盘
      */

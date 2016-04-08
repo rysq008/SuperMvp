@@ -32,6 +32,12 @@ public class NewsFragmentDelegate extends BaseRecyclerViewDelegate implements Lo
         mRecycleViewLayoutManager = new LinearLayoutManager(getActivity());
         recyclerview.setLayoutManager(mRecycleViewLayoutManager);
     }
+
+    @Override
+    boolean setFloatingActionMenuVisible() {
+        return false;
+    }
+
     /**
      * 设置加载更多接口
      *

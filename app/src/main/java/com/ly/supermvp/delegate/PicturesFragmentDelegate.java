@@ -28,7 +28,6 @@ import com.orhanobut.dialogplus.ViewHolder;
  */
 public class PicturesFragmentDelegate extends BaseRecyclerViewDelegate implements LoadingView {
     private static final int PRELOAD_SIZE = 6;
-
     private LinearLayout ll_dialog_holder;//弹窗的布局
     private DialogPlus mDialog;
 
@@ -40,6 +39,11 @@ public class PicturesFragmentDelegate extends BaseRecyclerViewDelegate implement
         mGridViewLayoutManager = new StaggeredGridLayoutManager(2,
                 StaggeredGridLayoutManager.VERTICAL);
         recyclerview.setLayoutManager(mGridViewLayoutManager);
+    }
+
+    @Override
+    boolean setFloatingActionMenuVisible() {
+        return true;
     }
 
     /**
@@ -89,6 +93,34 @@ public class PicturesFragmentDelegate extends BaseRecyclerViewDelegate implement
             }
         });
         showOnlyContentDialog(holder, Gravity.TOP, false);
+    }
+
+    /**
+     * 设置悬浮菜单项目点击事件
+     */
+    public void setFloatingActionButtonListener(final FloatingActionButtonListener listener){
+        for(int i = 0; i < mFloatingActionButtons.size(); i++){
+            String id = "";
+            switch (i) {
+                case 0 : id = "4001"; break;
+                case 1 : id = "4002"; break;
+                case 2 : id = "4003"; break;
+                case 3 : id = "4004"; break;
+                default: id = "4001"; break;
+            }
+            final String finalId = id;
+            mFloatingActionButtons.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onClick(finalId);
+                    hideMenu(true);
+                }
+            });
+        }
+    }
+
+    public interface FloatingActionButtonListener{
+        void onClick(String id);
     }
 
     /**
