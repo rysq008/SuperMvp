@@ -3,6 +3,7 @@ package com.ly.supermvp.delegate;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -110,6 +111,14 @@ public class WeatherFragmentDelegate extends AppDelegate implements LoadingView{
                 .setCancelable(true)
                 .create();
         dialog.show();
+    }
+
+    /**
+     * 关闭软键盘
+     */
+    public void closeSoftInput(){
+        InputMethodManager inputMethodManager = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(et_location.getWindowToken(), 0);
     }
 
     @Override
