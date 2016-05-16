@@ -9,7 +9,7 @@
 - leakcanary引入(这个还在摸索到底怎么用)
 - Retrofit（+RxJava）网络请求
 - Glide加载缓存图片
-- 使用RecycleView展示新闻列表
+- 使用RecyclerView展示新闻列表
 
 ###**版本**
 ####V0.5
