@@ -4,7 +4,7 @@
 ###**简介**
 一款遵循**Material Design**风格的新闻，美图，天气查询应用
 - Android一些次新的技术的一个合集示例
-- API来自网络免费API（感谢提供api的服务商，良心啊~，*不过这几天不太稳定，时不时返回一个html代码，有待测试*）
+- API来自网络免费API（感谢提供api的服务商，良心啊~，不过*最新版本美图大全已经改为收费的API*）
 - MVP模式（使用ViewDelegate解耦，非常感谢**kymjs**提供的mvp思想，在他的基础上我有一些改动，虽然有些地方我有点不太理解，但是决定在这个应用上做个最佳实践）@kymjs(https://github.com/kymjs/TheMVP)
 - leakcanary引入(这个还在摸索到底怎么用)
 - Retrofit（+RxJava）网络请求
