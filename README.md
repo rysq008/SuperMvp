@@ -1,7 +1,7 @@
 #  SuperMvp
 ## **MVP + RxJava + Retrofit + Glide + Material Design**
 
-###**简介**
+##**简介**
 一款遵循**Material Design**风格的新闻，美图，天气查询应用
 - Android一些次新的技术的一个合集示例
 - API来自网络免费API（感谢提供api的服务商，良心啊~，不过*最新版本美图大全已经改为收费的API*）
@@ -11,7 +11,7 @@
 - Glide加载缓存图片
 - 使用RecyclerView展示新闻列表
 
-###**截图**
+##**截图**
 ####美图
 
 ![](./picture1.gif) ![](./picture2.gif)
@@ -22,7 +22,7 @@
 
 ![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
 
-###**版本**
+##**版本**
 ####V0.6
 - 解决美图api请求失败问题
 - ╮(╯▽╰)╭续费“美图大全”，收费支持更多并发，嘿嘿，急需star来弥补金钱上的损失
@@ -49,13 +49,13 @@
 
 
 
-### 深受以下文章影响，感谢大神们的无私讲解
+## 深受以下文章影响，感谢大神们的无私讲解
 * [给Android开发者的RxJava详解](http://gank.io/post/560e15be2dca930e00da1083)
 * [深入浅出RxJava](http://blog.csdn.net/lzyzsd/article/details/41833541)
 * [用MVP架构开发Android应用](http://kymjs.com/code/2015/11/09/01)
 * [对MVC、MVP、MVVM的理解](http://blog.csdn.net/napolunyishi/article/details/22722345)
 
-###**开源项目**
+##**开源项目**
 #####RengwuxianRxjava
 扔物线《给Android开发者的RxJava详解》文章中的例子  
 Github地址：https://github.com/androidmalin/RengwuxianRxjava
@@ -64,11 +64,11 @@ Github地址：https://github.com/androidmalin/RengwuxianRxjava
 基于Material Design和MVP的新闻客户端    
 Github地址：https://github.com/liuling07/SimpleNews
 
-###**About me**
-* 如果不能运行或者有问题请Email: lyyx@outlook.com
+##**About me**
+* 如果不能运行或者有问题请Email: LYYX@outlook.com
 * WeiBo:http://weibo.com/liuyang6
 
-###**引入的第三方库**
+##**引入的第三方库**
 ####squarup出品，必属精品, 不用过多介绍
 * [Retrofit](https://github.com/square/retrofit)
 * [LeakCanary](https://github.com/square/leakcanary)
