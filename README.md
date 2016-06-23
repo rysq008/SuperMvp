@@ -11,17 +11,6 @@
 - Glide加载缓存图片
 - 使用RecyclerView展示新闻列表
 
-##**截图**
-####美图
-
-![](./picture1.gif) ![](./picture2.gif)
-####新闻
-
-![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_news.jpg)
-####天气预报
-
-![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
-
 ##**版本**
 ####V0.6
 - 解决美图api请求失败问题
@@ -48,6 +37,16 @@
 - 下拉刷新与加载更多的解耦
 
 
+##**截图**
+####美图
+
+![](./picture1.gif) ![](./picture2.gif)
+####新闻
+
+![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_news.jpg)
+####天气预报
+
+![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
 
 ## 深受以下文章影响，感谢大神们的无私讲解
 * [给Android开发者的RxJava详解](http://gank.io/post/560e15be2dca930e00da1083)
