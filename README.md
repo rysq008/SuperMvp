@@ -43,10 +43,10 @@
 ![](./picture1.gif) ![](./picture2.gif)
 ####新闻
 
-![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_news.jpg)
+![](./mvp_news.jpg)
 ####天气预报
 
-![](http://7xrdzx.com1.z0.glb.clouddn.com/mvp_weather.gif)
+![](./mvp_weather.gif)
 
 ## 深受以下文章影响，感谢大神们的无私讲解
 * [给Android开发者的RxJava详解](http://gank.io/post/560e15be2dca930e00da1083)
