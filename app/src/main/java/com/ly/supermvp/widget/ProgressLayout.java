@@ -16,6 +16,9 @@ import com.ly.supermvp.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 加载视图视图控件
+ */
 public class ProgressLayout extends RelativeLayout {
 
     private static final String LOADING_TAG = "ProgressLayout.LOADING_TAG";
@@ -23,20 +26,27 @@ public class ProgressLayout extends RelativeLayout {
 
     private LayoutInflater inflater;
     private LayoutParams layoutParams;
+    //加载中视图
     private View loadingGroup;
+    //加载错误视图
     private View errorGroup;
-
+    //加载中布局
     private RelativeLayout loadingLayout;
+    //加载错误布局
     private RelativeLayout errorLayout;
+    //错误的文字
     private TextView errorTextView;
+    //点击重试按钮
     private Button errorButton;
 
+    //内容view容器
     private List<View> contentViews = new ArrayList<>();
 
     private enum State {
         LOADING, CONTENT, ERROR
     }
 
+    //初始状态为加载中
     private State currentState = State.LOADING;
 
     public ProgressLayout(Context context) {
@@ -53,8 +63,19 @@ public class ProgressLayout extends RelativeLayout {
         init(attrs);
     }
 
+    /**
+     * 初始化，在构造方法中调用，获取inflater
+     *
+     * @param attrs
+     */
     private void init(AttributeSet attrs) {
         inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (errorButton != null) errorButton.setOnClickListener(null);
     }
 
     @Override
@@ -67,52 +88,9 @@ public class ProgressLayout extends RelativeLayout {
         }
     }
 
-    public void showLoading() {
-        currentState = State.LOADING;
-        ProgressLayout.this.showLoadingView();
-        ProgressLayout.this.hideErrorView();
-        ProgressLayout.this.setContentVisibility(false);
-    }
-
-    public void showContent() {
-        currentState = State.CONTENT;
-        ProgressLayout.this.hideLoadingView();
-        ProgressLayout.this.hideErrorView();
-        ProgressLayout.this.setContentVisibility(true);
-    }
-
-    public void showError(@StringRes int stringId, @NonNull OnClickListener onClickListener) {
-        currentState = State.ERROR;
-        ProgressLayout.this.hideLoadingView();
-        ProgressLayout.this.showErrorView();
-
-        errorTextView.setText(getResources().getString(stringId));
-        errorButton.setOnClickListener(onClickListener);
-        ProgressLayout.this.setContentVisibility(false);
-    }
-
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (errorButton != null) errorButton.setOnClickListener(null);
-    }
-
-    public State getCurrentState() {
-        return currentState;
-    }
-
-    public boolean isContent() {
-        return currentState == State.CONTENT;
-    }
-
-    public boolean isLoading() {
-        return currentState == State.LOADING;
-    }
-
-    public boolean isError() {
-        return currentState == State.ERROR;
-    }
-
+    /**
+     * 显示加载中视图
+     */
     private void showLoadingView() {
 
         if (loadingGroup == null) {
@@ -130,6 +108,9 @@ public class ProgressLayout extends RelativeLayout {
         }
     }
 
+    /**
+     * 显示错误视图
+     */
     private void showErrorView() {
 
         if (errorGroup == null) {
@@ -162,9 +143,53 @@ public class ProgressLayout extends RelativeLayout {
         }
     }
 
+    /**
+     * 设置内容视图是否可见
+     * @param visible true 可见
+     */
     private void setContentVisibility(boolean visible) {
         for (View contentView : contentViews) {
             contentView.setVisibility(visible ? View.VISIBLE : View.GONE);
         }
+    }
+
+    public void showLoading() {
+        currentState = State.LOADING;
+        ProgressLayout.this.showLoadingView();
+        ProgressLayout.this.hideErrorView();
+        ProgressLayout.this.setContentVisibility(false);
+    }
+
+    public void showContent() {
+        currentState = State.CONTENT;
+        ProgressLayout.this.hideLoadingView();
+        ProgressLayout.this.hideErrorView();
+        ProgressLayout.this.setContentVisibility(true);
+    }
+
+    public void showError(@StringRes int stringId, @NonNull OnClickListener onClickListener) {
+        currentState = State.ERROR;
+        ProgressLayout.this.hideLoadingView();
+        ProgressLayout.this.showErrorView();
+
+        errorTextView.setText(getResources().getString(stringId));
+        errorButton.setOnClickListener(onClickListener);
+        ProgressLayout.this.setContentVisibility(false);
+    }
+
+    public State getCurrentState() {
+        return currentState;
+    }
+
+    public boolean isContent() {
+        return currentState == State.CONTENT;
+    }
+
+    public boolean isLoading() {
+        return currentState == State.LOADING;
+    }
+
+    public boolean isError() {
+        return currentState == State.ERROR;
     }
 }
