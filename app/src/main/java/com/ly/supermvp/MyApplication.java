@@ -32,12 +32,11 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Logger.init().logLevel(LogLevel.FULL);
-        instance = (MyApplication) getApplicationContext();
+        instance = this;
 //        this.enabledStrictMode();
         ToastUtils.register(this);
         //LeakCanary检测OOM
         LeakCanary.install(this);
-
         //初始化日志输出工具
         CrashHandler.init(new CrashHandler(getApplicationContext()));
         /**
