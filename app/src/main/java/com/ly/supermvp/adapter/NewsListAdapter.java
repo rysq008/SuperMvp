@@ -26,6 +26,7 @@ import butterknife.ButterKnife;
  * @version 1.0
  *          <p/>
  *          Create by 2016/1/27 16:26
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class NewsListAdapter extends RecyclerView.Adapter {
     private static final int TYPE_ITEM = 0x00;//内容

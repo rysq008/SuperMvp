@@ -6,6 +6,11 @@ import android.widget.ImageView;
 
 /**
  * 保留长宽比的imageview
+ * @author 刘阳
+ * @version 1.0
+ *          <p/>
+ *          Create by 2016/2/29 17:43
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class RatioImageView extends ImageView {
 

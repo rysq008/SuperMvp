@@ -9,6 +9,7 @@ package com.ly.supermvp.delegate;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/22 11:03
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public interface SwipeRefreshAndLoadMoreCallBack {
     /**

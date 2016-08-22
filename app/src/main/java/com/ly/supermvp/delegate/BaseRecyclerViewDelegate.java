@@ -29,6 +29,7 @@ import rx.functions.Action1;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/23 13:53
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public abstract class BaseRecyclerViewDelegate extends AppDelegate implements LoadingView{
     @Bind(R.id.progress_layout)

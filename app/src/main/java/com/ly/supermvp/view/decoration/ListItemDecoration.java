@@ -20,6 +20,7 @@ import com.ly.supermvp.R;
  * @version 1.0
  *          <p/>
  *          Create by 2016/1/28 10:47
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class ListItemDecoration extends RecyclerView.ItemDecoration {
     private Drawable mDrawable;

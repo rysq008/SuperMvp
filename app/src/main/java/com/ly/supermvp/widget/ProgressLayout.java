@@ -18,6 +18,11 @@ import java.util.List;
 
 /**
  * 加载视图视图控件
+ * @author 刘阳
+ * @version 1.0
+ *          <p/>
+ *          Create by 2016/2/29 17:43
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class ProgressLayout extends RelativeLayout {
 

@@ -26,6 +26,7 @@ import butterknife.ButterKnife;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/21 16:36
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class PictureGridAdapter extends RecyclerView.Adapter{
     private List<PictureBody> mList;

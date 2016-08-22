@@ -18,6 +18,7 @@ import butterknife.Bind;
  * @version 1.0
  *          <p/>
  *          Create by 2016/1/27 11:10
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class MainActivityDelegate extends AppDelegate{
     @Bind(R.id.container)

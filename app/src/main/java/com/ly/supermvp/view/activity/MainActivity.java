@@ -14,6 +14,16 @@ import com.ly.supermvp.adapter.SectionsPagerAdapter;
 import com.ly.supermvp.delegate.MainActivityDelegate;
 import com.ly.supermvp.mvp_frame.presenter.ActivityPresenter;
 
+/**
+ * <Pre>
+ *      主Activity
+ * </Pre>
+ * @author 刘阳
+ * @version 1.0
+ *          <p/>
+ *          Create by 2016/1/27 10:47
+ * @see https://github.com/liuyanggithub/SuperMvp
+ */
 public class MainActivity extends ActivityPresenter<MainActivityDelegate> implements View.OnClickListener {
 
     @Override

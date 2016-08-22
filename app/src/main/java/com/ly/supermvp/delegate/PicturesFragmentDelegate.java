@@ -25,6 +25,7 @@ import com.orhanobut.dialogplus.ViewHolder;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/21 14:52
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class PicturesFragmentDelegate extends BaseRecyclerViewDelegate implements LoadingView {
     private static final int PRELOAD_SIZE = 6;

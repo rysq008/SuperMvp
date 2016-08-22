@@ -15,12 +15,14 @@ import static android.os.Build.VERSION_CODES.GINGERBREAD;
 
 /**
  * <Pre>
+ *     自定义的Application，做一些初始化配置
  * </Pre>
  *
  * @author 刘阳
  * @version 1.0
  *          <p/>
  *          Create by 2016/1/27 10:47
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class MyApplication extends Application {
     private static MyApplication instance;

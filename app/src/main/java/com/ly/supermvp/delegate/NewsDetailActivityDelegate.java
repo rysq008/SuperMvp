@@ -25,6 +25,7 @@ import butterknife.Bind;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/6 15:34
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class NewsDetailActivityDelegate extends AppDelegate{
     @Bind(R.id.toolbar)

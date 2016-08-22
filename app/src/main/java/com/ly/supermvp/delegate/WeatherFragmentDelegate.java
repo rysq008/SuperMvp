@@ -30,6 +30,7 @@ import butterknife.Bind;
  * @version 1.0
  *          <p/>
  *          Create by 2016/2/29 17:44
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class WeatherFragmentDelegate extends AppDelegate implements LoadingView{
 

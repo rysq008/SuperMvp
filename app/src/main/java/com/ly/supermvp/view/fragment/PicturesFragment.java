@@ -24,6 +24,7 @@ import java.util.List;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/21 14:39
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class PicturesFragment extends FragmentPresenter<PicturesFragmentDelegate> implements SwipeRefreshAndLoadMoreCallBack, PicturesFragmentDelegate.FloatingActionButtonListener {
     private PicturesModel mPicturesModel;

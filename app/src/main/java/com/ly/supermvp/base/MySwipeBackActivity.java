@@ -18,6 +18,7 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/6 15:31
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class MySwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;//右滑删除Activity帮助类

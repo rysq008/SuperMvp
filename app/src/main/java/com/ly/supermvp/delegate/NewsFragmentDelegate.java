@@ -16,6 +16,7 @@ import com.ly.supermvp.view.LoadingView;
  * @version 1.0
  *          <p/>
  *          Create by 2016/1/27 14:34
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class NewsFragmentDelegate extends BaseRecyclerViewDelegate implements LoadingView{
     /**

@@ -19,6 +19,7 @@ import com.ly.supermvp.view.fragment.WeatherFragment;
  * @version 1.0
  *          <p/>
  *          Create by 2016/1/27 16:26
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private Context context;

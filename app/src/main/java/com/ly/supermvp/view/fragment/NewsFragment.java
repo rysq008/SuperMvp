@@ -26,6 +26,7 @@ import java.util.List;
  * @version 1.0
  *          <p/>
  *          Create by 2016/1/27 11:04
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class NewsFragment extends FragmentPresenter<NewsFragmentDelegate> implements SwipeRefreshAndLoadMoreCallBack {
     private NewsModel mNewsModel;

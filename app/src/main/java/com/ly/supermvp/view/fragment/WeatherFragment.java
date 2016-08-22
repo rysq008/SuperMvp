@@ -21,6 +21,7 @@ import com.orhanobut.logger.Logger;
  * @version 1.0
  *          <p/>
  *          Create by 2016/2/29 17:43
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class WeatherFragment extends FragmentPresenter<WeatherFragmentDelegate> implements View.OnClickListener {
     public static final String NEED_MORE_DAY = "1";

@@ -16,6 +16,7 @@ import me.imid.swipebacklayout.lib.SwipeBackLayout;
  * @version 1.0
  *          <p/>
  *          Create by 2016/3/6 15:33
+ * @see https://github.com/liuyanggithub/SuperMvp
  */
 public class NewsDetailActivity extends ActivityPresenter<NewsDetailActivityDelegate>{
     /**
