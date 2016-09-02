@@ -64,8 +64,9 @@ Github地址：https://github.com/androidmalin/RengwuxianRxjava
 Github地址：https://github.com/liuling07/SimpleNews
 
 ##**About me**
-* 如果不能运行或者有问题请Email: LYYX@outlook.com
-* WeiBo:http://weibo.com/liuyang6
+* [Email](LYYX@outlook.com)
+* [WeiBo](http://weibo.com/liuyang6)
+* [Blog](http://blog.csdn.net/ly502541243)
 
 ##**引入的第三方库**
 ####squarup出品，必属精品, 不用过多介绍
